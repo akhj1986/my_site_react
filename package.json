@@ -1,0 +1,23 @@
+{
+  "name": "my_site_react",
+  "version": "1.0.0",
+  "description": "My page built with React",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhj1986/my_site_react.git"
+  },
+  "author": "Alex Harris-Jedamski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhj1986/my_site_react/issues"
+  },
+  "homepage": "https://github.com/akhj1986/my_site_react#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
