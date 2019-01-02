@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import codeLang from "./myIcons.json";
+import data from "./data.json";
 
 class KnownScripts extends Component {
   constructor(props) {
     super(props);
     this.state = {
       i: 0,
-      codeLang: codeLang.codeLang,
-      displayClass: codeLang.codeLang[0]
+      codeLang: data.codeLang,
+      displayClass: data.codeLang[0]
     };
     this.changeLang = this.changeLang.bind(this);
   }

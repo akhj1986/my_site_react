@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import NavLink from "./NavLink";
-import routes from "./myRoutes.json";
+import data from "./data.json";
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      routes: routes.routes
+      routes: data.routes
     };
     this.handleClick = this.handleClick.bind(this);
   }
