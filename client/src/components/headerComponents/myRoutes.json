@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "routeName": "home",
+      "active": true,
+      "path": "/",
+      "exact": "true",
+      "text": "Home"
+    },
+    {
+      "routeName": "portfolio",
+      "active": false,
+      "path": "/Portfolio",
+      "text": "Portfolio"
+    },
+    {
+      "routeName": "skills",
+      "active": false,
+      "path": "/Skills",
+      "text": "Skills"
+    },
+    {
+      "routeName": "contact",
+      "active": false,
+      "path": "/Contact",
+      "text": "Contact",
+      "id": "contact"
+    }
+  ]
+}

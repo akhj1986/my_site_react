@@ -1,14 +1,14 @@
 import React from "react";
-import Logo from "./headerSubs/Logo";
-import NavBar from "./headerSubs/NavBar";
+import Logo from "./headerComponents/Logo";
+import NavBar from "./headerComponents/NavBar";
 
-function Header() {
+const Header = () => {
   return (
     <div className="section head">
       <Logo />
       <NavBar />
     </div>
   );
-}
+};
 
 export default Header;

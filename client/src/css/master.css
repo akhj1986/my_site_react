@@ -244,6 +244,9 @@ table {
 #desktop-nav {
   display: none; }
 
+#contact {
+  display: none; }
+
 .nav-bar {
   background: #00e6ff;
   height: 40px; }
@@ -534,6 +537,10 @@ li {
     padding: 0 0 0 15px; }
   #mobile-nav {
     display: none; }
+  #contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   #desktop-nav {
     display: -webkit-box;
     display: -ms-flexbox;
