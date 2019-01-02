@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavLink from "./NavLink";
 import routes from "./myRoutes.json";
-import MediaQuery from "react-responsive";
 
 class NavBar extends Component {
   constructor(props) {
@@ -45,25 +44,9 @@ class NavBar extends Component {
 
     return (
       <div className="nav-bar">
-        <nav id="navigation">
-          <MediaQuery maxWidth={490}>
-            {maxWidth => {
-              if (maxWidth) {
-                return (
-                  <ul className="nav-list" id="mobile-nav">
-                    {routes}
-                  </ul>
-                );
-              } else {
-                return (
-                  <ul className="nav-list" id="desktop-nav">
-                    {routes}
-                  </ul>
-                );
-              }
-            }}
-          </MediaQuery>
-        </nav>
+        <ul id="navigation" className="nav-list">
+          {routes}
+        </ul>
       </div>
     );
   }
