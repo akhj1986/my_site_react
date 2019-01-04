@@ -29,7 +29,7 @@ app.get("/api/scores", (req, res) => {
 
 app.post("/api/scores", (req, res) => {
   const score = req.body;
-  Score.addScore(score, (err, book) => {
+  Score.addScore(score, (err, score) => {
     if (err) {
       throw err;
     }
