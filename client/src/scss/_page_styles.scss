@@ -8,12 +8,19 @@
   min-width: 320px;
 }
 
+#game-canvas {
+  max-width: 800px;
+  height: auto;
+  max-height: 90%;
+  font-size: 100%;
+}
+
 .section.head {
   @include flex-column;
   .title {
     @include flex-row;
-    background: $purpleBack;
-    background-image: url("../img/grey-jean.png");
+    background: $marineBack;
+    background-image: url("../components/img/grey-jean.png");
     height: 133px;
     padding: 0 40px 0 34px;
   }
@@ -28,7 +35,7 @@
   }
   #code-lang-skills {
     @include flex-row;
-    color: white;
+    color: black;
     padding: 0 0 0 15px;
     font-weight: 100;
     font-size: 18px;
@@ -52,7 +59,7 @@
 }
 
 .nav-bar {
-  background: #00e6ff;
+  background: $purpleBack;
   height: 40px;
   .nav-list {
     @include flex-row;
@@ -114,6 +121,10 @@
     }
     h1 {
       display: none;
+    }
+    .skills-header {
+      display: flex;
+      margin: 0 0 30px;
     }
   }
   .contact-page-link {
@@ -205,21 +216,18 @@
 //Portfolio page specifics
 
 #portfolio {
-  .container {
-    align-items: center;
-    justify-content: center;
+  .game-link {
+    color: red;
   }
-  .portfolio-content {
-    margin: 0 0 30px;
-    h1 {
-      margin: 0 0 30px;
-    }
-    p {
-      margin: 0 0 100px;
-      font-size: 25px;
-    }
+  a {
+    color: red;
   }
-  .contact-page-link {
+  .language {
     padding: 0;
+  }
+  h1 {
+    display: flex;
+    padding: 0 40px;
+    margin: 0 0 30px;
   }
 }

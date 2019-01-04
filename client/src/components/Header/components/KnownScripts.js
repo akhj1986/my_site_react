@@ -5,7 +5,7 @@ class KnownScripts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      i: 0,
+      index: 0,
       codeLang: data.codeLang,
       displayClass: data.codeLang[0]
     };
@@ -14,16 +14,15 @@ class KnownScripts extends Component {
 
   changeLang() {
     const l = this.state.codeLang;
-    const selectL = l[this.state.i];
-    this.state.i < l.length - 1
-      ? this.setState(prevState => {
-          return {
-            i: prevState.i + 1
-          };
-        })
-      : this.setState({ i: 0 });
-
+    let i = this.state.index;
+    if (i < l.length - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+    const selectL = l[i];
     this.setState({
+      index: i,
       displayClass: selectL
     });
   }

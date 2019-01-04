@@ -1,0 +1,61 @@
+@import "presets.scss";
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 7px ridge #555;
+}
+
+#score {
+  align-self: flex-end;
+  margin: 0 0 10px;
+}
+#game-page {
+  max-height: 90vh;
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .score-table {
+    margin: 20px;
+    width: 100%;
+    display: block;
+    list-style: none;
+    h1 {
+      margin: 0 0 10px;
+    }
+    ul {
+      border: #555 ridge 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
+    }
+  }
+  .table-entry {
+    width: auto;
+    color: black;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 0 10px 10px;
+  }
+  .even {
+    background: $marineBack;
+  }
+  .odd {
+    background: $purpleBack;
+  }
+  .player-name {
+    font-weight: bold;
+    margin: 0 0 0 15px;
+  }
+  .player-score {
+    display: flex;
+    align-self: flex-end;
+    margin: 0 15px 0 0;
+  }
+}

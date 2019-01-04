@@ -1,17 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
+import Game from "./components/game/Game";
+import Wrapper from "./components";
 
 const App = () => {
   return (
     <Router>
-      <div className="wrapper">
-        <Header />
-        <MainContent />
-        <Footer />
+      <div>
+        <Switch>
+          <Route path="/game" component={Game} />
+          <Route path="/" component={Wrapper} />
+        </Switch>
       </div>
     </Router>
   );

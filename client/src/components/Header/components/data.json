@@ -10,19 +10,19 @@
     {
       "routeName": "portfolio",
       "active": false,
-      "path": "/Portfolio",
+      "path": "/portfolio",
       "text": "Portfolio"
     },
     {
       "routeName": "skills",
       "active": false,
-      "path": "/Skills",
+      "path": "/skills",
       "text": "Skills"
     },
     {
       "routeName": "contact",
       "active": false,
-      "path": "/Contact",
+      "path": "/contact",
       "text": "Contact",
       "id": "contact"
     }

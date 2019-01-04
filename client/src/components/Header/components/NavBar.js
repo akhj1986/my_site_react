@@ -14,12 +14,7 @@ class NavBar extends Component {
   handleClick(name) {
     this.setState(prevState => {
       const updatedState = prevState.routes.map(route => {
-        if (route.routeName === name) {
-          route.active = true;
-        }
-        if (route.routeName !== name) {
-          route.active = false;
-        }
+        route.active = route.routeName === name ? true : false;
         return route;
       });
       return {

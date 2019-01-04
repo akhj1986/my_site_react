@@ -154,6 +154,12 @@ table {
   min-height: 100vh;
   min-width: 320px; }
 
+#game-canvas {
+  max-width: 800px;
+  height: auto;
+  max-height: 90%;
+  font-size: 100%; }
+
 .section.head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -180,8 +186,8 @@ table {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 40px;
-    background: #ab63fe;
-    background-image: url("../img/grey-jean.png");
+    background: #00e6ff;
+    background-image: url("../components/img/grey-jean.png");
     height: 133px;
     padding: 0 40px 0 34px; }
   .section.head .logo-title {
@@ -227,7 +233,7 @@ table {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 40px;
-    color: white;
+    color: black;
     padding: 0 0 0 15px;
     font-weight: 100;
     font-size: 18px; }
@@ -245,7 +251,7 @@ table {
   display: none; }
 
 .nav-bar {
-  background: #00e6ff;
+  background: #ab63fe;
   height: 40px; }
   .nav-bar .nav-list {
     display: -webkit-box;
@@ -362,6 +368,11 @@ table {
       margin: 0 0 10px 0; }
     .container .paragraph h1 {
       display: none; }
+    .container .paragraph .skills-header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 0 30px; }
   .container .contact-page-link {
     padding: 0 40px;
     margin: 0 0 30px; }
@@ -451,24 +462,21 @@ table {
   display: flex;
   margin: 0 0 30px; }
 
-#portfolio .container {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+#portfolio .game-link {
+  color: red; }
 
-#portfolio .portfolio-content {
-  margin: 0 0 30px; }
-  #portfolio .portfolio-content h1 {
-    margin: 0 0 30px; }
-  #portfolio .portfolio-content p {
-    margin: 0 0 100px;
-    font-size: 25px; }
+#portfolio a {
+  color: red; }
 
-#portfolio .contact-page-link {
+#portfolio .language {
   padding: 0; }
+
+#portfolio h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 40px;
+  margin: 0 0 30px; }
 
 body {
   font-family: "Scada", sans-serif;
@@ -556,9 +564,7 @@ li {
     -ms-flex-pack: start;
     justify-content: flex-start; }
     #navigation li {
-      margin: 0 55px 0 0; }
-  #portfolio .portfolio-content p {
-    font-size: 35px; } }
+      margin: 0 55px 0 0; } }
 
 @media screen and (min-width: 768px) {
   .section.head .title {
@@ -642,22 +648,31 @@ li {
     padding: 0 80px; }
   #skills-page .paragraph {
     padding: 0 80px; }
+  #portfolio .paragraph {
+    padding: 0 80px; }
   #portfolio .container {
-    -webkit-box-orient: horizontal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
-  #portfolio .portfolio-content {
-    padding: 0;
-    margin: 0 0 30px; }
-    #portfolio .portfolio-content p {
-      font-size: 50px; } }
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+  #portfolio h1 {
+    padding: 0 80px;
+    margin: 0 0 45px; } }
 
 @media screen and (min-width: 900px) {
   .section.head .title {
@@ -669,29 +684,47 @@ li {
     margin: 0 0 0 25px;
     padding: 47px 0 0; }
   .section.head #code-lang-skills {
-    font-size: 25px; }
+    padding: 0 0 0 300px;
+    font-size: 50px; }
   #navigation li {
     margin: 0 75px 0 0; }
-  #contact-page .container {
-    padding: 80px 0 0; }
-  #contact-page h1 {
-    margin: 0 0 60px; }
-  #contact-page .contacts {
+  #contact-page {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0 40px;
-    padding: 0 80px; }
-    #contact-page .contacts span {
-      margin: 0 0 30px;
-      font-size: 15px; } }
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; }
+    #contact-page .container {
+      padding: 80px 0 0; }
+    #contact-page h1 {
+      margin: 0 0 60px; }
+    #contact-page .contacts {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0 40px;
+      padding: 0 80px; }
+      #contact-page .contacts span {
+        margin: 0 0 30px;
+        font-size: 15px; } }
 
 @media screen and (min-width: 1080px) {
   .section.head .title {
@@ -708,4 +741,84 @@ li {
   #contact-page .contacts {
     padding: 0 120px; }
   #skills-page .paragraph {
-    padding: 0 120px; } }
+    padding: 0 120px; }
+  #portfolio .paragraph {
+    padding: 0 120px; }
+  #portfolio h1 {
+    padding: 0 120px;
+    margin: 0 0 60px; } }
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 7px ridge #555; }
+
+#score {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin: 0 0 10px; }
+
+#game-page {
+  max-height: 90vh;
+  margin: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #game-page .score-table {
+    margin: 20px;
+    width: 100%;
+    display: block;
+    list-style: none; }
+    #game-page .score-table h1 {
+      margin: 0 0 10px; }
+    #game-page .score-table ul {
+      border: #555 ridge 7px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+      align-items: space-between; }
+  #game-page .table-entry {
+    width: auto;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 0 10px 10px; }
+  #game-page .even {
+    background: #00e6ff; }
+  #game-page .odd {
+    background: #ab63fe; }
+  #game-page .player-name {
+    font-weight: bold;
+    margin: 0 0 0 15px; }
+  #game-page .player-score {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    margin: 0 15px 0 0; }
