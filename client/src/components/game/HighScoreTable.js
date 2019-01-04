@@ -28,9 +28,9 @@ class HighScoreTable extends Component {
     const highScores = this.state.scores
       .sort((a, b) => b.score - a.score)
       .slice(0, 10)
-      .map(info => {
+      .map((info, i) => {
         let classID = "";
-        info.id % 2 === 0
+        i % 2 === 0
           ? (classID = "even table-entry")
           : (classID = "odd table-entry");
         console.log(classID);
