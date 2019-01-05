@@ -29,12 +29,12 @@
   ],
 
   "codeLang": [
+    "fab fa-react",
     "fab fa-js",
     "fab fa-html5",
     "fab fa-css3",
     "fab fa-sass",
-    "fab fa-git",
-    "fab fa-npm",
-    "fab fa-react"
+    "fab fa-node",
+    "fab fa-npm"
   ]
 }

@@ -9,10 +9,11 @@ class KnownScripts extends Component {
       codeLang: data.codeLang,
       displayClass: data.codeLang[0]
     };
-    this.changeLang = this.changeLang.bind(this);
+    // this.changeLang = this.changeLang.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  changeLang() {
+  handleClick() {
     const l = this.state.codeLang;
     let i = this.state.index;
     if (i < l.length - 1) {
@@ -27,12 +28,36 @@ class KnownScripts extends Component {
     });
   }
 
-  componentDidMount() {
-    setInterval(this.changeLang, 2000);
-  }
+  // changeLang() {
+  //   const l = this.state.codeLang;
+  //   let i = this.state.index;
+  //   if (i < l.length - 1) {
+  //     i++;
+  //   } else {
+  //     i = 0;
+  //   }
+  //   const selectL = l[i];
+  //   this.setState({
+  //     index: i,
+  //     displayClass: selectL
+  //   });
+  // }
+
+  // componentDidMount() {
+  //   setInterval(this.changeLang, 4000);
+  // }
 
   render() {
-    return <i id="code-lang-skills" className={this.state.displayClass} />;
+    return (
+      <div className="nav-bar-icons">
+        <span>Built with</span>
+        <i
+          id="code-lang-skills"
+          className={this.state.displayClass}
+          onClick={this.handleClick}
+        />
+      </div>
+    );
   }
 }
 

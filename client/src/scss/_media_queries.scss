@@ -23,17 +23,19 @@
       margin: 0 0 0 20px;
       font-size: 20px;
     }
+    .nav-bar-icons {
+      margin: 0 0 0 10px;
+    }
     #code-lang-skills {
       font-size: 20px;
-      padding: 0 0 0 15px;
+      padding: 0 0 0 5px;
+    }
+    #code-lang-skills:hover {
+      font-size: 21px;
     }
   }
 
   #contact {
-    display: flex;
-  }
-
-  #small-screen-headshot {
     display: flex;
   }
 
@@ -84,49 +86,19 @@
     }
   }
 
-  #small-screen-headshot {
-    display: none;
-  }
-
-  #large-screen-headshot {
-    display: flex;
-    margin: 75px 0 15px 0;
-    img {
-      width: 130px;
-      height: 130px;
-    }
-  }
-
   .container {
-    flex-direction: row-reverse;
-    .row-content {
-      padding: 0 80px;
-      flex-direction: column;
-      justify-content: flex-start;
-      h1 {
-        display: none;
-      }
-      .language {
-        font-size: 20px;
-        letter-spacing: 6px;
-        width: 130px;
-        padding: 15px 0;
-        margin: 0 0 50px;
-        justify-content: center;
-      }
-      .language:hover {
-        background: none;
-        color: $greyPurple;
-        border: $purpleText solid 1px;
-        padding: 14px 0;
-      }
-    }
     .paragraph {
       padding: 0 0 0 80px;
       margin: 0 0 40px;
       h1 {
         display: flex;
         margin: 0 0 50px;
+      }
+    }
+    .head-shot {
+      img {
+        width: 150px;
+        height: 150px;
       }
     }
   }
@@ -185,9 +157,49 @@
       margin: 0 0 0 25px;
       padding: 47px 0 0;
     }
+    .nav-bar-icons {
+      margin: 0 0 0 290px;
+      font-size: 12px;
+    }
     #code-lang-skills {
-      padding: 0 0 0 300px;
+      padding: 0 0 0 10px;
       font-size: 50px;
+    }
+    #code-lang-skills:hover {
+      font-size: 50.5px;
+    }
+  }
+
+  .container.home-container {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    .phrases {
+      margin: 0 0 0 80px;
+      padding: 0 80px;
+      justify-content: flex-end;
+      h1 {
+        width: 450px;
+        justify-self: center;
+      }
+      .large-text {
+        font-size: 45px;
+      }
+      .small-text {
+        font-size: 25px;
+      }
+    }
+    .head-shot {
+      margin: 0 0 0 80px;
+      img {
+        height: 180px;
+        width: 180px;
+      }
+    }
+    .learn-more-link {
+      width: 0px;
+      display: none;
     }
   }
 
@@ -236,6 +248,12 @@
     }
     .row-content {
       padding: 0 120px;
+    }
+  }
+
+  .container.home-container {
+    .head-shot {
+      margin: 0 0 0 115px;
     }
   }
 

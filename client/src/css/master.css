@@ -184,7 +184,7 @@ table {
     background: #00e6ff;
     background-image: url("../components/img/grey-jean.png");
     height: 133px;
-    padding: 0 40px 0 34px; }
+    padding: 0 0 0 34px; }
   .section.head .logo-title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -216,6 +216,23 @@ table {
     align-items: baseline;
     margin: 0;
     padding: 0; }
+  .section.head .nav-bar-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 8px;
+    color: black;
+    margin: 0 0 0 10px; }
   .section.head #code-lang-skills {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -229,11 +246,20 @@ table {
     justify-content: space-between;
     padding: 0 40px;
     color: black;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 5px;
     font-weight: 100;
     font-size: 18px; }
   .section.head #code-lang-skills:hover {
-    background: rgba(0, 0, 255, 0.1); }
+    background: rgba(0, 0, 255, 0.1);
+    cursor: pointer;
+    color: #6e06d6;
+    font-size: 19px;
+    -webkit-transition: font-size 0.3s;
+    -o-transition: font-size 0.3s;
+    transition: font-size 0.3s;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
   .section.head .logo {
     width: 90px;
     height: auto;
@@ -291,12 +317,6 @@ table {
       color: #6e06d6;
       font-weight: bold; }
 
-#small-screen-headshot {
-  display: none; }
-
-#large-screen-headshot {
-  display: none; }
-
 #skills-paragraph {
   display: none; }
 
@@ -340,6 +360,23 @@ table {
   justify-content: flex-start;
   background: white;
   padding: 45px 0 0 0; }
+  .container .phrases {
+    margin: 0 0 30px;
+    padding: 0 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    height: 80px; }
+    .container .phrases .large-text {
+      margin: 30px 0 0;
+      text-align: center;
+      font-size: 35px; }
+    .container .phrases .small-text {
+      margin: 30px 0 0;
+      font-size: 20px;
+      text-align: center; }
   .container .row-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -361,30 +398,21 @@ table {
     margin: 0 0 20px; }
     .container .paragraph p {
       margin: 0 0 10px 0; }
-    .container .paragraph h1 {
-      display: none; }
-    .container .paragraph .skills-header {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      margin: 0 0 30px; }
-  .container .contact-page-link {
-    padding: 0 40px;
-    margin: 0 0 30px; }
-    .container .contact-page-link a {
-      color: #6e06d6;
-      font-weight: bold; }
-    .container .contact-page-link a:hover {
-      color: #ab63fe; }
   .container .head-shot {
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    margin: 0 0 30px 40px; }
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 0 40px; }
     .container .head-shot img {
-      height: 80px;
-      width: 80px;
+      height: 120px;
+      width: 120px;
       margin: 0;
-      border: solid 1px #8b6e89; }
+      border: solid 1px #8b6e89;
+      border-radius: 100px; }
+  .container .learn-more-link {
+    -ms-flex-item-align: center;
+    align-self: center;
+    color: #555;
+    font-weight: bold; }
 
 .footer {
   background: #e2e2e2;
@@ -532,14 +560,14 @@ li {
     padding: 37px 0 0;
     margin: 0 0 0 20px;
     font-size: 20px; }
+  .section.head .nav-bar-icons {
+    margin: 0 0 0 10px; }
   .section.head #code-lang-skills {
     font-size: 20px;
-    padding: 0 0 0 15px; }
+    padding: 0 0 0 5px; }
+  .section.head #code-lang-skills:hover {
+    font-size: 21px; }
   #contact {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  #small-screen-headshot {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -568,54 +596,17 @@ li {
     padding: 3px 75px; }
     #navigation li {
       font-size: 16px; }
-  #small-screen-headshot {
-    display: none; }
-  #large-screen-headshot {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 75px 0 15px 0; }
-    #large-screen-headshot img {
-      width: 130px;
-      height: 130px; }
-  .container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse; }
-    .container .row-content {
-      padding: 0 80px;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start; }
-      .container .row-content h1 {
-        display: none; }
-      .container .row-content .language {
-        font-size: 20px;
-        letter-spacing: 6px;
-        width: 130px;
-        padding: 15px 0;
-        margin: 0 0 50px;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center; }
-      .container .row-content .language:hover {
-        background: none;
-        color: #8b6e89;
-        border: #6e06d6 solid 1px;
-        padding: 14px 0; }
-    .container .paragraph {
-      padding: 0 0 0 80px;
-      margin: 0 0 40px; }
-      .container .paragraph h1 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin: 0 0 50px; }
+  .container .paragraph {
+    padding: 0 0 0 80px;
+    margin: 0 0 40px; }
+    .container .paragraph h1 {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 0 50px; }
+  .container .head-shot img {
+    width: 150px;
+    height: 150px; }
   #contact-page .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -678,9 +669,47 @@ li {
     font-size: 25px;
     margin: 0 0 0 25px;
     padding: 47px 0 0; }
+  .section.head .nav-bar-icons {
+    margin: 0 0 0 290px;
+    font-size: 12px; }
   .section.head #code-lang-skills {
-    padding: 0 0 0 300px;
+    padding: 0 0 0 10px;
     font-size: 50px; }
+  .section.head #code-lang-skills:hover {
+    font-size: 50.5px; }
+  .container.home-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0; }
+    .container.home-container .phrases {
+      margin: 0 0 0 80px;
+      padding: 0 80px;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+      .container.home-container .phrases h1 {
+        width: 450px;
+        justify-self: center; }
+      .container.home-container .phrases .large-text {
+        font-size: 45px; }
+      .container.home-container .phrases .small-text {
+        font-size: 25px; }
+    .container.home-container .head-shot {
+      margin: 0 0 0 80px; }
+      .container.home-container .head-shot img {
+        height: 180px;
+        width: 180px; }
+    .container.home-container .learn-more-link {
+      width: 0px;
+      display: none; }
   #navigation li {
     margin: 0 75px 0 0; }
   #contact-page {
@@ -730,6 +759,8 @@ li {
     padding: 0 0 0 120px; }
   .container .row-content {
     padding: 0 120px; }
+  .container.home-container .head-shot {
+    margin: 0 0 0 115px; }
   #contact-page h1 {
     padding: 0 120px;
     margin: 0 0 60px; }
@@ -800,6 +831,12 @@ li {
       text-shadow: black 2px 2px;
       margin: 0 15px 60px;
       font-size: 30px; }
+    #game-page .game-menu h2 {
+      text-align: center;
+      color: #ffdf2a;
+      text-shadow: black 2px 2px;
+      margin: 0 15px 60px;
+      font-size: 15px; }
     #game-page .game-menu .game-menu-links {
       padding: 0 50px;
       display: -webkit-box;
@@ -811,7 +848,8 @@ li {
       flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      margin: 0 0 20px; }
     #game-page .game-menu .game-specific {
       display: -webkit-box;
       display: -ms-flexbox;

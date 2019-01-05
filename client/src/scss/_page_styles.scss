@@ -15,7 +15,7 @@
     background: $marineBack;
     background-image: url("../components/img/grey-jean.png");
     height: 133px;
-    padding: 0 40px 0 34px;
+    padding: 0 0 0 34px;
   }
   .logo-title {
     @include flex-column;
@@ -26,15 +26,29 @@
     margin: 0;
     padding: 0;
   }
+  .nav-bar-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 8px;
+    color: black;
+    margin: 0 0 0 10px;
+  }
   #code-lang-skills {
     @include flex-row;
     color: black;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 5px;
     font-weight: 100;
     font-size: 18px;
   }
   #code-lang-skills:hover {
     background: transparentize(blue, 0.9);
+    cursor: pointer;
+    color: $purpleText;
+    font-size: 19px;
+    transition: font-size 0.3s;
+    transition: color 0.3s;
   }
   .logo {
     width: 90px;
@@ -79,13 +93,6 @@
   }
 }
 
-#small-screen-headshot {
-  display: none;
-}
-#large-screen-headshot {
-  display: none;
-}
-
 #skills-paragraph {
   display: none;
 }
@@ -101,6 +108,23 @@
   justify-content: flex-start;
   background: white;
   padding: 45px 0 0 0;
+  .phrases {
+    margin: 0 0 30px;
+    padding: 0 40px;
+    display: flex;
+    align-self: center;
+    height: 80px;
+    .large-text {
+      margin: 30px 0 0;
+      text-align: center;
+      font-size: 35px;
+    }
+    .small-text {
+      margin: 30px 0 0;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
   .row-content {
     @include flex-row;
     align-items: center;
@@ -112,34 +136,22 @@
     p {
       margin: 0 0 10px 0;
     }
-    h1 {
-      display: none;
-    }
-    .skills-header {
-      display: flex;
-      margin: 0 0 30px;
-    }
-  }
-  .contact-page-link {
-    padding: 0 40px;
-    margin: 0 0 30px;
-    a {
-      color: $purpleText;
-      font-weight: bold;
-    }
-    a:hover {
-      color: $purpleBack;
-    }
   }
   .head-shot {
-    align-self: flex-start;
-    margin: 0 0 30px 40px;
+    align-self: center;
+    margin: 0 0 40px;
     img {
-      height: 80px;
-      width: 80px;
+      height: 120px;
+      width: 120px;
       margin: 0;
       border: solid 1px $greyPurple;
+      border-radius: 100px;
     }
+  }
+  .learn-more-link {
+    align-self: center;
+    color: #555;
+    font-weight: bold;
   }
 }
 

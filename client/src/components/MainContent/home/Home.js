@@ -1,14 +1,14 @@
 import React from "react";
-import RowContent from "./RowContent";
-import ParagraphContent from "./ParagraphContent";
-import MobilePhoto from "./MobilePhoto";
+import Photo from "./Photo";
+import Phrases from "./Phrases";
+import LearnMore from "./LearnMore";
 
 const Home = () => {
   return (
-    <div className="container">
-      <RowContent />
-      <ParagraphContent />
-      <MobilePhoto />
+    <div className="container home-container">
+      <Phrases />
+      <Photo />
+      <LearnMore />
     </div>
   );
 };

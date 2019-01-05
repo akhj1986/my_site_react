@@ -6,6 +6,7 @@ const GameMenu = () => {
     <div className="game-menu">
       <h1>Space Blocks Attack!</h1>
       <MenuLinks />
+      <h2>A game by Alex Harris-Jedamski</h2>
     </div>
   );
 };

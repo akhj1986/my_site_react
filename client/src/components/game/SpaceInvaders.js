@@ -222,9 +222,6 @@ class SpaceInvaders extends Component {
         const m = missiles[i];
         ctx.fillStyle = "#ff5a00";
         ctx.fillRect(m.x, (m.y -= 8), m.w, m.h);
-        // if (m.y < 0) {
-        //   missiles.splice(i, 1);
-        // }
         hitDetect(missiles[i], i, level);
       }
     }
@@ -425,15 +422,15 @@ class SpaceInvaders extends Component {
       if (level === "ten") {
         clearInterval(animateInitTen);
       }
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "#FFA5E1";
       ctx.font = "bold 60px Arial, sans serif";
-      ctx.fillText("You lose!", cW * 0.2, cH * 0.3, 400);
+      ctx.fillText("You lose!", cW * 0.2, cH * 0.4, 400);
       ctx.fillStyle = "white";
       ctx.font = "bold 40px Arial, sans serif";
-      ctx.fillText(`You scored ${tempScore} points`, cW * 0.2, cH * 0.45);
+      ctx.fillText(`You scored ${tempScore} points`, cW * 0.2, cH * 0.5);
       ctx.fillStyle = "blue";
       ctx.font = "bold 30px Arial, sans serif";
-      ctx.fillText("Press enter to continue", cW * 0.2, cH * 0.55, 400);
+      ctx.fillText("Press enter to continue", cW * 0.2, cH * 0.57, 400);
 
       document.addEventListener("keydown", event => {
         const key = event.keyCode;
@@ -450,9 +447,9 @@ class SpaceInvaders extends Component {
 
     const win = level => {
       ctx.font = "bold 40px Arial, sans serif";
-      ctx.fillStyle = "red";
+      ctx.fillStyle = "#A5E1FF";
       ctx.fillText(`Level ${level} complete!`, cW * 0.5 - 200, cH * 0.4, 400);
-      ctx.fillStyle = "blue";
+      ctx.fillStyle = "#A5FFE5";
       ctx.font = "bold 30px Arial, sans serif";
       ctx.fillText("Press enter to continue", cW * 0.5 - 200, cH * 0.6, 400);
       missiles.splice(0, missiles.length);
