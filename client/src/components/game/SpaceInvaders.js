@@ -629,6 +629,7 @@ class SpaceInvaders extends Component {
       }
 
       if (level === "Ten") {
+        this.props.updateScore(tempScore);
         clearInterval(animateInit);
         levelDeterminer = "win";
         document.addEventListener("keydown", event => {
