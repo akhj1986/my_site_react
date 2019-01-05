@@ -17,6 +17,7 @@ class SpaceInvaders extends Component {
     const ctx = canvas.getContext("2d");
     const cH = ctx.canvas.height;
     const cW = ctx.canvas.width;
+    const negPos = [-1, 1];
 
     //  Background stars ------------------------------------------------------------------------------------------------
 
@@ -212,10 +213,23 @@ class SpaceInvaders extends Component {
     }
 
     // missile shot detection and projection ----------------------------------------------------------------------------
-
+    let charge = 0;
     let missiles = [];
     let shots = 0;
     let tempScore = 0;
+    let totalCharge = 0;
+    let chargeMissiles = [];
+    const finalRelease = [];
+
+    function chargeUp() {
+      const c = charge + 1;
+      charge = c;
+      totalCharge = charge;
+      document.getElementById("charge").innerHTML = `Charge: ${totalCharge}`;
+      chargeMissiles.push({
+        id: totalCharge
+      });
+    }
 
     function Missile(level) {
       for (var i = 0; i < missiles.length; i++) {
@@ -224,6 +238,34 @@ class SpaceInvaders extends Component {
         ctx.fillRect(m.x, (m.y -= 8), m.w, m.h);
         hitDetect(missiles[i], i, level);
       }
+    }
+
+    function chargeMissile(level) {
+      for (var i = 0; i < finalRelease.length; i++) {
+        const m = finalRelease[i];
+        ctx.fillStyle = "#ff5a00";
+        ctx.fillRect(m.x, (m.y -= 8), m.w, m.h);
+        hitDetect(finalRelease[i], i, level);
+      }
+    }
+
+    let releasedCharge = [];
+    function releaseCharge() {
+      releasedCharge = chargeMissiles.map(() => ({
+        x:
+          playerOne.x +
+          Math.random() *
+            negPos[Math.floor(Math.random() * negPos.length)] *
+            100,
+        y: playerOne.y,
+        w: 3,
+        h: 7
+      }));
+      Array.prototype.push.apply(finalRelease, releasedCharge);
+      chargeMissiles = [];
+      totalCharge = 0;
+      charge = 0;
+      document.getElementById("charge").innerHTML = `Charge: ${totalCharge}`;
     }
 
     const hitDetect = (m, mi, level) => {
@@ -264,7 +306,6 @@ class SpaceInvaders extends Component {
       }
     }
 
-    const negPos = [-1, 1];
     const shrapnel = [];
     const fireColor = [
       "rgba(255, 203, 5, 1)",
@@ -329,6 +370,7 @@ class SpaceInvaders extends Component {
       spaceFly(colour);
       playerRender(level);
       Missile(level);
+      chargeMissile(level);
       Enemies(level);
     }
 
@@ -383,6 +425,12 @@ class SpaceInvaders extends Component {
       }
       if (keyNum === 40) {
         playerOne.dir = "down";
+      }
+      if (keyNum === 32) {
+        chargeUp();
+      }
+      if (keyNum === 67) {
+        releaseCharge(totalCharge);
       }
     });
 
