@@ -45,13 +45,14 @@ class HighScoreTable extends Component {
       });
     return (
       <div className="score-table">
-        <h1>High Scores</h1>
+        <h1>Space Blocks Attack!</h1>
+        <h2>High Scores</h2>
         <ul>{highScores}</ul>
         <br />
         <Link to="/game">
           <button>Back to menu</button>
         </Link>
-        <button onClick={this.handleClick}>Exit Game (Closes Tab)</button>
+        <button onClick={this.handleClick}>Exit Game</button>
       </div>
     );
   }

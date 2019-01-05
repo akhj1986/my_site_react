@@ -7,7 +7,7 @@ import Wrapper from "./components";
 const App = () => {
   return (
     <Router>
-      <div>
+      <div id="app-container">
         <Switch>
           <Route path="/game" component={Game} />
           <Route path="/" component={Wrapper} />

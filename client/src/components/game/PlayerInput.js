@@ -60,9 +60,8 @@ class PlayerInput extends Component {
     }
     return (
       <div className="player-form">
-        <h1>
-          Please input your details to log your score! {this.state.playerScore}
-        </h1>
+        <h1>You scored {this.state.playerScore} points!</h1>
+        <h2>Please type your alias and submit to log your score!</h2>
         <form onSubmit={this.handleSubmit}>
           <input
             className="input-field"
@@ -72,7 +71,6 @@ class PlayerInput extends Component {
             onChange={this.handleChange}
             placeholder="Please enter your name"
           />
-          <h2>{this.state.playerName}</h2>
           <button className="submit-button">Submit</button>
         </form>
         <IsSubmitting submitting={this.state.isSubmitting} />

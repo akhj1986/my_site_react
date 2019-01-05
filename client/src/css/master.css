@@ -4,6 +4,7 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
 @import url("https://fonts.googleapis.com/css?family=Scada:400,700");
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
 html,
 body,
 div,
@@ -153,12 +154,6 @@ table {
   justify-content: flex-start;
   min-height: 100vh;
   min-width: 320px; }
-
-#game-canvas {
-  max-width: 800px;
-  height: auto;
-  max-height: 90%;
-  font-size: 100%; }
 
 .section.head {
   display: -webkit-box;
@@ -750,18 +745,19 @@ li {
 
 #game-canvas {
   display: block;
-  width: 100%;
+  margin: 20px 0 10px;
+  width: 90vw;
   height: auto;
-  border: 7px ridge #555; }
-
-#score {
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  margin: 0 0 10px; }
+  border: 7px ridge #e6e6e6;
+  max-width: 800px;
+  max-height: 90%;
+  font-size: 100%;
+  background: black; }
 
 #game-page {
-  max-height: 90vh;
-  margin: 10px 20px;
+  max-height: 100vh;
+  overflow: hidden;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,12 +771,86 @@ li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  #game-page button {
+    border: silver ridge 3px;
+    background: #e5e5e5;
+    width: 200px;
+    cursor: pointer;
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-family: "Russo One", sans-serif; }
+  #game-page .game-menu {
+    height: 99vh;
+    width: 99vw;
+    background: #010922;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: silver ridge 5px; }
+    #game-page .game-menu h1 {
+      text-align: center;
+      color: #ffdf2a;
+      text-shadow: black 2px 2px;
+      margin: 0 15px 60px;
+      font-size: 30px; }
+    #game-page .game-menu .game-menu-links {
+      padding: 0 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    #game-page .game-menu .game-specific {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
   #game-page .score-table {
-    margin: 20px;
-    width: 100%;
-    display: block;
+    height: 99vh;
+    width: 99vw;
+    background: #010922;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: silver ridge 5px;
     list-style: none; }
     #game-page .score-table h1 {
+      text-align: center;
+      color: #ffdf2a;
+      text-shadow: black 2px 2px;
+      margin: 0 15px 30px;
+      font-size: 30px; }
+    #game-page .score-table h2 {
+      text-align: center;
+      color: #d9fffe;
       margin: 0 0 10px; }
     #game-page .score-table ul {
       border: #555 ridge 7px;
@@ -793,7 +863,10 @@ li {
       flex-direction: column;
       -webkit-box-align: space-between;
       -ms-flex-align: space-between;
-      align-items: space-between; }
+      align-items: space-between;
+      width: 80vw;
+      min-width: 250px;
+      max-width: 400px; }
   #game-page .table-entry {
     width: auto;
     color: black;
@@ -809,16 +882,143 @@ li {
     margin: 0;
     padding: 10px 0 10px 10px; }
   #game-page .even {
-    background: #00e6ff; }
+    background: #a70b00;
+    color: #fffc99; }
   #game-page .odd {
-    background: #ab63fe; }
+    background: #e5e5e5; }
   #game-page .player-name {
     font-weight: bold;
-    margin: 0 0 0 15px; }
+    font-size: 18px;
+    margin: 0 0 0 35px; }
   #game-page .player-score {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-item-align: end;
     align-self: flex-end;
-    margin: 0 15px 0 0; }
+    margin: 0 35px 0 0;
+    font-weight: normal; }
+  #game-page .game-screen {
+    height: 99vh;
+    width: 99vw;
+    background: #010922;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: silver ridge 5px;
+    background: #010511;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden; }
+    #game-page .game-screen .game-status-bar {
+      margin: 10px 0 0;
+      padding: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #game-page .game-screen .game-status-bar div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0 0 40px; }
+      #game-page .game-screen .game-status-bar h3 {
+        margin: 0 10px 20px;
+        padding: 5px;
+        width: 120px;
+        border: solid 1px silver;
+        color: white; }
+    #game-page .game-screen button {
+      width: 80px;
+      font-size: 12px;
+      color: #a70101; }
+  #game-page .player-form {
+    height: 99vh;
+    width: 99vw;
+    background: #010922;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: silver ridge 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #game-page .player-form h1 {
+      color: #d9fffe;
+      margin: 0 10px 20px; }
+    #game-page .player-form h2 {
+      color: #ffdf2a;
+      margin: 0 10px 20px;
+      text-align: center;
+      font-size: 15px; }
+    #game-page .player-form form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    #game-page .player-form input {
+      width: 250px;
+      padding: 10px;
+      margin: 0 0 15px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; }
+    #game-page .player-form button {
+      font-size: 15px;
+      width: 100px; }
+  @media screen and (min-width: 490px) {
+    #game-page .game-screen .game-status-bar {
+      margin: 0;
+      padding: 0 15px 15px; }
+      #game-page .game-screen .game-status-bar div {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; } }
+  @media screen and (min-width: 600px) {
+    #game-page .game-screen .game-status-bar {
+      padding: 0 15px; }
+      #game-page .game-screen .game-status-bar div {
+        margin: 0; }
+      #game-page .game-screen .game-status-bar h3 {
+        margin: 3px 10px; }
+    #game-page #game-canvas {
+      margin: auto; } }

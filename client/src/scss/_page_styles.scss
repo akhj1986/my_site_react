@@ -8,13 +8,6 @@
   min-width: 320px;
 }
 
-#game-canvas {
-  max-width: 800px;
-  height: auto;
-  max-height: 90%;
-  font-size: 100%;
-}
-
 .section.head {
   @include flex-column;
   .title {

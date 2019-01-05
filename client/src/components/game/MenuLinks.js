@@ -9,13 +9,17 @@ class MenuLinks extends Component {
   render() {
     return (
       <div className="game-menu-links">
-        <Link to="/game/play">
-          <button>Play</button>
-        </Link>
-        <Link to="/game/scores">
-          <button>High Score Table</button>
-        </Link>
-        <button onClick={this.handleExit}>Exit Game (Closes Tab)</button>
+        <div className="game-specific">
+          <Link to="/game/play">
+            <button>Start a new game</button>
+          </Link>
+          <Link to="/game/scores">
+            <button>High Score Table</button>
+          </Link>
+        </div>
+        <button className="exit-game-button" onClick={this.handleExit}>
+          Exit Game
+        </button>
       </div>
     );
   }

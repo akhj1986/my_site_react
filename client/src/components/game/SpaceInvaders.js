@@ -667,10 +667,16 @@ class SpaceInvaders extends Component {
           height="500"
           style={{ background: "black" }}
         />
-        <h3 id="score">Score: 0</h3>
-        <Link to="/game">
-          <button>Quit (Exit to game menu)</button>
-        </Link>
+        <div className="game-status-bar">
+          <div>
+            <h3 id="score">Score: 0</h3>
+            <h3 id="lives">Ships: 2</h3>
+            <h3 id="charge">Charge: 0</h3>
+          </div>
+          <Link to="/game">
+            <button>Quit</button>
+          </Link>
+        </div>
       </div>
     );
   }
