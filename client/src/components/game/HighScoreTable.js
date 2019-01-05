@@ -48,7 +48,10 @@ class HighScoreTable extends Component {
         <h1>High Scores</h1>
         <ul>{highScores}</ul>
         <br />
-        <button onClick={this.handleClick}>Close window</button>
+        <Link to="/game">
+          <button>Back to menu</button>
+        </Link>
+        <button onClick={this.handleClick}>Exit Game (Closes Tab)</button>
       </div>
     );
   }

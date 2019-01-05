@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SpaceInvaders from "./SpaceInvaders";
 import HighScoreTable from "./HighScoreTable";
 import PlayerInput from "./PlayerInput";
+import GameMenu from "./GameMenu";
 
 class Game extends Component {
   constructor(props) {
@@ -31,7 +32,8 @@ class Game extends Component {
     };
     return (
       <div id="game-page">
-        <Route exact path="/game" render={myGame} />
+        <Route exact path="/game" component={GameMenu} />
+        <Route path="/game/play" render={myGame} />
         <Route path="/game/scores" component={HighScoreTable} />
         <Route path="/game/input" render={inputScreen} />
       </div>

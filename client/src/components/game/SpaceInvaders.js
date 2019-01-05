@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import data from "./enemies.json";
 
@@ -668,6 +668,9 @@ class SpaceInvaders extends Component {
           style={{ background: "black" }}
         />
         <h3 id="score">Score: 0</h3>
+        <Link to="/game">
+          <button>Quit (Exit to game menu)</button>
+        </Link>
       </div>
     );
   }
