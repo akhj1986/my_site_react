@@ -11,10 +11,6 @@ class ContactList extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log(this.state.contacts);
-  }
-
   render() {
     const contactComponents = this.state.contacts.map(contact => (
       <ContactLink

@@ -8,13 +8,18 @@ class Phrases extends Component {
       textArray: data.texts,
       displayText: "Web development using the latest technologies...",
       index: 0,
-      displayClass: "small-text"
+      displayClass: "small-text",
+      interval: ""
     };
     this.textRotation = this.textRotation.bind(this);
   }
 
   componentDidMount() {
-    setInterval(this.textRotation, 4000);
+    this.setState({ interval: setInterval(this.textRotation, 3200) });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   textRotation() {

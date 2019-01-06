@@ -268,7 +268,7 @@ table {
     color: #6e06d6;
     margin: 0 0 0 66px; }
 
-#contact {
+#contact-link {
   display: none; }
 
 .nav-bar {
@@ -567,7 +567,7 @@ li {
     padding: 0 0 0 5px; }
   .section.head #code-lang-skills:hover {
     font-size: 21px; }
-  #contact {
+  #contact-link {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }

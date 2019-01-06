@@ -5,26 +5,29 @@
       "active": true,
       "path": "/",
       "exact": "true",
-      "text": "Home"
+      "text": "Home",
+      "id": "home-link"
     },
     {
       "routeName": "portfolio",
       "active": false,
       "path": "/portfolio",
-      "text": "Portfolio"
+      "text": "Portfolio",
+      "id": "portfolio-link"
     },
     {
       "routeName": "skills",
       "active": false,
       "path": "/skills",
-      "text": "Skills"
+      "text": "Skills",
+      "id": "skills-link"
     },
     {
       "routeName": "contact",
       "active": false,
       "path": "/contact",
       "text": "Contact",
-      "id": "contact"
+      "id": "contact-link"
     }
   ],
 

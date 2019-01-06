@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 Score = require("./models/score");
 
 mongoose.connect(
-  "mongodb+srv://akhj1986:%40Arap1l3s@cluster0-tewwf.mongodb.net/SpaceGame",
+  "mongodb+srv://akhj1986:newroute@cluster0-tewwf.mongodb.net/SpaceGame",
   { useNewUrlParser: true }
 );
 
