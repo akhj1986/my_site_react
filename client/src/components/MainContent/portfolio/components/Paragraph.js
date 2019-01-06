@@ -10,10 +10,9 @@ const Paragraph = () => {
         October 2018, a portfolio is very much still in the works.
       </p>
       <p className="paragraph">
-        But please check out my git repository and play a fun little space game
-        I built (not touch screen compatible, sorry)!
+        But please check out my Git repositories and play a fun little space
+        game I built (not touch screen compatible, sorry)!
       </p>
-
       <PortfolioLinks />
     </div>
   );
