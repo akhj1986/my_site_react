@@ -221,11 +221,29 @@
 //Portfolio page specifics
 
 #portfolio {
-  .game-link {
-    color: red;
+  .portfolio-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  a {
-    color: red;
+  .game-link {
+    margin: 0 0 40px;
+    img {
+      width: 150px;
+      height: auto;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .repository-link {
+    a {
+      color: black;
+      font-size: 120px;
+    }
+    p {
+      font-size: 12px;
+    }
   }
   .language {
     padding: 0;

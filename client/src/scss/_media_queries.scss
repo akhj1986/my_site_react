@@ -141,6 +141,24 @@
       padding: 0 80px;
       margin: 0 0 45px;
     }
+    .portfolio-links {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 0 0 20px;
+    }
+    .game-link {
+      margin: 0;
+      img {
+        width: 120px;
+      }
+    }
+    .repository-link {
+      margin: 0 0 0 40px;
+      a {
+        font-size: 100px;
+      }
+    }
   }
 }
 
@@ -148,7 +166,6 @@
   .section.head {
     .title {
       height: 180px;
-      //justify-content: center;
     }
     .logo {
       width: 150px;
@@ -245,6 +262,15 @@
       }
     }
   }
+  // Portfolio page specifics
+  #portfolio {
+    .paragraph {
+      max-width: 800px;
+    }
+    .repository-link {
+      margin: 0 0 0 80px;
+    }
+  }
 }
 
 @media screen and (min-width: 1080px) {
@@ -302,6 +328,11 @@
     h1 {
       padding: 0 120px;
       margin: 0 0 60px;
+    }
+    .portfolio-links {
+    }
+    .repository-link {
+      margin: 0 0 0 120px;
     }
   }
 }

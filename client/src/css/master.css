@@ -485,11 +485,32 @@ table {
   display: flex;
   margin: 0 0 30px; }
 
-#portfolio .game-link {
-  color: red; }
+#portfolio .portfolio-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
-#portfolio a {
-  color: red; }
+#portfolio .game-link {
+  margin: 0 0 40px; }
+  #portfolio .game-link img {
+    width: 150px;
+    height: auto; }
+  #portfolio .game-link p {
+    font-size: 12px; }
+
+#portfolio .repository-link a {
+  color: black;
+  font-size: 120px; }
+
+#portfolio .repository-link p {
+  font-size: 12px; }
 
 #portfolio .language {
   padding: 0; }
@@ -658,7 +679,27 @@ li {
     justify-content: flex-start; }
   #portfolio h1 {
     padding: 0 80px;
-    margin: 0 0 45px; } }
+    margin: 0 0 45px; }
+  #portfolio .portfolio-links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin: 0 0 20px; }
+  #portfolio .game-link {
+    margin: 0; }
+    #portfolio .game-link img {
+      width: 120px; }
+  #portfolio .repository-link {
+    margin: 0 0 0 40px; }
+    #portfolio .repository-link a {
+      font-size: 100px; } }
 
 @media screen and (min-width: 900px) {
   .section.head .title {
@@ -771,7 +812,11 @@ li {
       padding: 0 80px; }
       #contact-page .contacts span {
         margin: 0 0 30px;
-        font-size: 15px; } }
+        font-size: 15px; }
+  #portfolio .paragraph {
+    max-width: 800px; }
+  #portfolio .repository-link {
+    margin: 0 0 0 80px; } }
 
 @media screen and (min-width: 1080px) {
   .section.head .title {
@@ -797,7 +842,9 @@ li {
     padding: 0 120px; }
   #portfolio h1 {
     padding: 0 120px;
-    margin: 0 0 60px; } }
+    margin: 0 0 60px; }
+  #portfolio .repository-link {
+    margin: 0 0 0 120px; } }
 
 #game-canvas {
   display: block;

@@ -14,25 +14,31 @@ class Skills extends Component {
           <div className="paragraph">
             <h1 className="skills-header">Skills</h1>
             <p>
-              I am experienced in HTML5 and CSS3, including the use of Flexbox.
-              I currently style with SASS (SCSS), using Prepros as an
-              auto-compiler. I also have experience in the use of Bootstrap 4,
-              and always work using Git and NPM.
+              Hello, I am Alex Harris-Jedamski! I am a motivated and highly
+              educated learner stepping into the world of professional web
+              development. I am passionate about programming and creating
+              high-quality code using the latest technologies.
             </p>
             <p>
-              I am loving the process of mastering modern JavaScript ES6 and am
-              excited to continue building my JavaScript skills! I am familiar
-              with the React framework and look forward to developing my skills
-              in that direction as well.
+              I have experience working with the React framework, JavaScript
+              ES6, Express, Axios, SASS and Flexbox, all of which were used to
+              build this website.
             </p>
-            <p>I have experience using Adobe Photoshop and Adobe Xd.</p>
+            <p>
+              I am loving the process of mastering modern JavaScript ES6 and
+              delving into the fantastice React framework! I always design using
+              a responsive, mobile-first approach with a focus on ease of
+              access. I also have experience working with Bootstrap 4, Adobe
+              Photoshop and Adobe Xd.
+            </p>
             <p>
               I have an extensive academic background, with a combined
               Bachelor’s degree in business and international studies and a
               Master’s degree in teaching. My exceptional academic performance,
-              where I achieved a grade point average of 6.69 out of 7 across all
-              studies, speaks volumes to my ability to learn, perform to
-              deadlines, and submit high quality work.
+              where I achieved a grade point average of 6.69 across all studies
+              (Australian grading - equates to a British 1st), speaks volumes to
+              my ability to learn, perform to deadlines, and submit high quality
+              work.
             </p>
           </div>
         </div>

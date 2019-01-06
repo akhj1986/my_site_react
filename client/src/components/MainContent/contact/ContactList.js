@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ContactLink from "./ContactLink";
 import data from "./data.json";
-import pdf from "./cv_alex-harris.pdf";
+import pdf from "./CVaHarrisJan2019.pdf";
 
 class ContactList extends Component {
   constructor(props) {
