@@ -33,7 +33,6 @@ class HighScoreTable extends Component {
         i % 2 === 0
           ? (classID = "even table-entry")
           : (classID = "odd table-entry");
-        console.log(classID);
         return (
           <TableEntry
             key={info._id}

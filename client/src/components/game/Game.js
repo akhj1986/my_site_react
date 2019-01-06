@@ -5,6 +5,7 @@ import SpaceInvaders from "./SpaceInvaders";
 import HighScoreTable from "./HighScoreTable";
 import PlayerInput from "./PlayerInput";
 import GameMenu from "./GameMenu";
+import Controls from "./Controls";
 
 class Game extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Game extends Component {
         <Route path="/game/play" render={myGame} />
         <Route path="/game/scores" component={HighScoreTable} />
         <Route path="/game/input" render={inputScreen} />
+        <Route path="/game/controls" render={Controls} />
       </div>
     );
   }

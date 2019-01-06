@@ -16,6 +16,9 @@ class MenuLinks extends Component {
           <Link to="/game/scores">
             <button>High Score Table</button>
           </Link>
+          <Link to="/game/controls">
+            <button>View Controls</button>
+          </Link>
         </div>
         <button className="exit-game-button" onClick={this.handleExit}>
           Exit Game

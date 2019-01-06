@@ -58,9 +58,7 @@ class SpaceInvaders extends Component {
     }
 
     // Enemy objects ------------------------------------------------------------------------------------------------------
-
-    const colors = ["#134b06", "#7c8f00", "#5d002c", "#81625d"];
-
+    const colors = data.colors;
     const yTen = data.yTen;
     const yForty = data.yForty;
     const ySeventy = data.ySeventy;
@@ -70,6 +68,11 @@ class SpaceInvaders extends Component {
     const yHundredNinety = data.yHundredNinety;
     const yTwoHundredTwenty = data.yTwoHundredTwenty;
     const yTwoHundredFifty = data.yTwoHundredFifty;
+    const yPlusTen = data.yPlusTen;
+    const yPlusForty = data.yPlusForty;
+    const yPlusSeventy = data.yPlusSeventy;
+    const yTwoHundredFiftyTriple = data.yTwoHundredFiftyTriple;
+    const yThreeHundredTimesFive = data.yThreeHundredTimesFive;
 
     let speed = 0.5;
     let enemyWidth = 43;
@@ -167,15 +170,90 @@ class SpaceInvaders extends Component {
           yTwoHundredFifty
         );
       }
+      if (level === "eleven") {
+        enemiesMap = enemiesTemplate.concat(
+          yPlusSeventy,
+          yPlusTen,
+          yTen,
+          yForty,
+          ySeventy,
+          yHundred,
+          yHundredThirty,
+          yHundredSixty,
+          yHundredNinety
+        );
+      }
+      if (level === "twelve") {
+        enemiesMap = enemiesTemplate.concat(
+          yPlusSeventy,
+          yPlusForty,
+          yPlusTen,
+          yTen,
+          yForty,
+          ySeventy,
+          yHundred,
+          yHundredThirty,
+          yHundredSixty,
+          yHundredNinety,
+          yTwoHundredTwenty
+        );
+      }
+      if (level === "thirteen") {
+        enemiesMap = enemiesTemplate.concat(
+          yPlusForty,
+          yPlusTen,
+          yTen,
+          yForty,
+          ySeventy,
+          yHundred,
+          yHundredThirty,
+          yHundredSixty,
+          yHundredNinety,
+          yTwoHundredTwenty,
+          yTwoHundredFiftyTriple
+        );
+      }
+      if (level === "fourteen") {
+        enemiesMap = enemiesTemplate.concat(
+          yTen,
+          yForty,
+          ySeventy,
+          yHundred,
+          yHundredThirty,
+          yHundredSixty,
+          yHundredNinety,
+          yTwoHundredTwenty,
+          yTwoHundredFiftyTriple,
+          yThreeHundredTimesFive
+        );
+      }
+      if (level === "fifteen") {
+        enemiesMap = enemiesTemplate.concat(
+          yPlusSeventy,
+          yPlusForty,
+          yPlusTen,
+          yTen,
+          yForty,
+          ySeventy,
+          yHundred,
+          yHundredThirty,
+          yHundredSixty,
+          yHundredNinety,
+          yTwoHundredTwenty,
+          yTwoHundredFifty,
+          yTwoHundredFiftyTriple,
+          yThreeHundredTimesFive
+        );
+      }
     }
 
-    function createEnemies() {
+    function createEnemies(color) {
       enemies = enemiesMap.map(obj => ({
         x: cW * (xDeterminer + xAdd * obj.x),
         y: obj.y,
         w: enemyWidth,
         h: 15,
-        clr: colors[Math.floor(Math.random() * colors.length)]
+        clr: color
       }));
     }
 
@@ -219,16 +297,20 @@ class SpaceInvaders extends Component {
     let tempScore = 0;
     let totalCharge = 0;
     let chargeMissiles = [];
-    const finalRelease = [];
+    let finalRelease = [];
 
     function chargeUp() {
-      const c = charge + 1;
-      charge = c;
-      totalCharge = charge;
-      document.getElementById("charge").innerHTML = `Charge: ${totalCharge}`;
-      chargeMissiles.push({
-        id: totalCharge
-      });
+      if (charge < 40) {
+        const c = charge + 1;
+        charge = c;
+        totalCharge = charge;
+        document.getElementById("charge").innerHTML = `Charge: ${Math.floor(
+          totalCharge / 2
+        )}`;
+        chargeMissiles.push({
+          id: totalCharge
+        });
+      }
     }
 
     function Missile(level) {
@@ -236,7 +318,7 @@ class SpaceInvaders extends Component {
         const m = missiles[i];
         ctx.fillStyle = "#ff5a00";
         ctx.fillRect(m.x, (m.y -= 8), m.w, m.h);
-        hitDetect(missiles[i], i, level);
+        hitDetect(missiles[i], i, missiles, level);
       }
     }
 
@@ -244,31 +326,34 @@ class SpaceInvaders extends Component {
       for (var i = 0; i < finalRelease.length; i++) {
         const m = finalRelease[i];
         ctx.fillStyle = "#ff5a00";
-        ctx.fillRect(m.x, (m.y -= 8), m.w, m.h);
-        hitDetect(finalRelease[i], i, level);
+        ctx.fillRect((m.x += m.xD), (m.y -= m.yD), m.w, m.h);
+        hitDetect(finalRelease[i], i, finalRelease, level);
       }
     }
 
     let releasedCharge = [];
     function releaseCharge() {
-      releasedCharge = chargeMissiles.map(() => ({
-        x:
-          playerOne.x +
-          Math.random() *
+      releasedCharge = chargeMissiles
+        .splice(0, chargeMissiles.length / 2)
+        .map(() => ({
+          x: playerOne.x + playerOne.w * 0.5,
+          y: playerOne.y,
+          xD:
+            Math.random() *
             negPos[Math.floor(Math.random() * negPos.length)] *
-            100,
-        y: playerOne.y,
-        w: 3,
-        h: 7
-      }));
+            2,
+          yD: Math.random() + 5,
+          w: 3,
+          h: 3
+        }));
       Array.prototype.push.apply(finalRelease, releasedCharge);
       chargeMissiles = [];
       totalCharge = 0;
       charge = 0;
-      document.getElementById("charge").innerHTML = `Charge: ${totalCharge}`;
+      document.getElementById("charge").innerHTML = `Charge: 0`;
     }
 
-    const hitDetect = (m, mi, level) => {
+    const hitDetect = (m, mi, missileArray, level) => {
       for (var i = 0; i < enemies.length; i++) {
         const e = enemies[i];
         if (
@@ -277,7 +362,7 @@ class SpaceInvaders extends Component {
           m.y + m.h >= e.y &&
           m.y < e.y + e.h
         ) {
-          missiles.splice(mi, 1);
+          missileArray.splice(mi, 1);
           enemies.splice(i, 1);
           enemiesTemplate.splice(i, 1);
           tempScore += Math.round(10 - 0.025 * e.y);
@@ -391,6 +476,11 @@ class SpaceInvaders extends Component {
     let animateInitEight = "";
     let animateInitNine = "";
     let animateInitTen = "";
+    let animateInitEleven = "";
+    let animateInitTwelve = "";
+    let animateInitThirteen = "";
+    let animateInitFouteen = "";
+    let animateInitFifteen = "";
 
     // Movement controls ------------------------------------------------------------------------------------------------
 
@@ -434,7 +524,10 @@ class SpaceInvaders extends Component {
       }
     });
 
-    window.addEventListener("load", createEnemies());
+    window.addEventListener(
+      "load",
+      createEnemies(colors[Math.floor(Math.random() * colors.length)])
+    );
 
     // lose and win functions -------------------------------------------------------------------------------------------
 
@@ -470,6 +563,21 @@ class SpaceInvaders extends Component {
       if (level === "ten") {
         clearInterval(animateInitTen);
       }
+      if (level === "eleven") {
+        clearInterval(animateInitEleven);
+      }
+      if (level === "twelve") {
+        clearInterval(animateInitTwelve);
+      }
+      if (level === "thirteen") {
+        clearInterval(animateInitThirteen);
+      }
+      if (level === "fourteen") {
+        clearInterval(animateInitFouteen);
+      }
+      if (level === "fifteen") {
+        clearInterval(animateInitFifteen);
+      }
       ctx.fillStyle = "#FFA5E1";
       ctx.font = "bold 60px Arial, sans serif";
       ctx.fillText("You lose!", cW * 0.2, cH * 0.4, 400);
@@ -498,15 +606,27 @@ class SpaceInvaders extends Component {
       ctx.fillStyle = "#A5E1FF";
       ctx.fillText(`Level ${level} complete!`, cW * 0.5 - 200, cH * 0.4, 400);
       ctx.fillStyle = "#A5FFE5";
-      ctx.font = "bold 30px Arial, sans serif";
-      ctx.fillText("Press enter to continue", cW * 0.5 - 200, cH * 0.6, 400);
+      ctx.font = "bold 20px Arial, sans serif";
+      ctx.fillText(
+        "Be sure to charge up now by holding SPACE",
+        cW * 0.5 - 200,
+        cH * 0.55,
+        400
+      );
+      ctx.fillText(
+        "Then press enter to continue",
+        cW * 0.5 - 200,
+        cH * 0.65,
+        400
+      );
       missiles.splice(0, missiles.length);
+      finalRelease.splice(0, finalRelease.length);
 
-      // level initialisation --------------------------------------------------------------------------------------
+      // level two initialisation --------------------------------------------------------------------------------------
 
       if (level === "one") {
         clearInterval(animateInit);
-        speed += 0.08;
+        speed += 0.1;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "one") {
@@ -516,7 +636,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -525,7 +645,7 @@ class SpaceInvaders extends Component {
 
       if (level === "two") {
         clearInterval(animateInitTwo);
-        speed += 0.08;
+        speed += 0.1;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "two") {
@@ -535,7 +655,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -543,7 +663,7 @@ class SpaceInvaders extends Component {
       // level Four initialisation ----------------------------------------------------------------------------------------
       if (level === "three") {
         clearInterval(animateInitThree);
-        speed += 0.08;
+        speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "three") {
@@ -553,7 +673,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -572,7 +692,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies("#091416");
           }
         });
       }
@@ -581,7 +701,7 @@ class SpaceInvaders extends Component {
 
       if (level === "five") {
         clearInterval(animateInitFive);
-        speed += 0.08;
+        speed += 0.05;
         starColor = "rgba(207, 0, 15, 0.75)";
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
@@ -592,7 +712,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -601,7 +721,7 @@ class SpaceInvaders extends Component {
 
       if (level === "six") {
         clearInterval(animateInitSix);
-        speed += 0.08;
+        speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "six") {
@@ -611,7 +731,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -620,7 +740,7 @@ class SpaceInvaders extends Component {
 
       if (level === "seven") {
         clearInterval(animateInitSeven);
-        speed += 0.08;
+        speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "seven") {
@@ -630,7 +750,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -639,7 +759,7 @@ class SpaceInvaders extends Component {
 
       if (level === "eight") {
         clearInterval(animateInitEight);
-        speed += 0.08;
+        speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "eight") {
@@ -649,7 +769,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
@@ -658,7 +778,7 @@ class SpaceInvaders extends Component {
 
       if (level === "nine") {
         clearInterval(animateInitNine);
-        speed += 0.08;
+        speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "nine") {
@@ -668,14 +788,100 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies();
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }
 
-      if (level === "Ten") {
+      // level Eleven initialisation -----------------------------------------------------------------------------------------
+      if (level === "ten") {
+        clearInterval(animateInitTen);
+        speed += 0.05;
+        document.addEventListener("keydown", function(event) {
+          const key = event.keyCode;
+          if (key === 13 && levelDeterminer === "ten") {
+            levelDeterminer = "eleven";
+            pushEnemies(levelDeterminer);
+            animateInitEleven = setInterval(
+              () => animate(starColor, levelDeterminer),
+              30
+            );
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
+          }
+        });
+      }
+      // level Twelve initialisation -----------------------------------------------------------------------------------------
+      if (level === "eleven") {
+        clearInterval(animateInitEleven);
+        speed += 0.05;
+        document.addEventListener("keydown", function(event) {
+          const key = event.keyCode;
+          if (key === 13 && levelDeterminer === "eleven") {
+            levelDeterminer = "twelve";
+            pushEnemies(levelDeterminer);
+            animateInitTwelve = setInterval(
+              () => animate(starColor, levelDeterminer),
+              30
+            );
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
+          }
+        });
+      }
+      // level thirteen initialisation -----------------------------------------------------------------------------------------
+      if (level === "twelve") {
+        clearInterval(animateInitTwelve);
+        speed += 0.05;
+        document.addEventListener("keydown", function(event) {
+          const key = event.keyCode;
+          if (key === 13 && levelDeterminer === "twelve") {
+            levelDeterminer = "thirteen";
+            pushEnemies(levelDeterminer);
+            animateInitThirteen = setInterval(
+              () => animate(starColor, levelDeterminer),
+              30
+            );
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
+          }
+        });
+      }
+      // level fourteen initialisation -----------------------------------------------------------------------------------------
+      if (level === "thirteen") {
+        clearInterval(animateInitThirteen);
+        speed += 0.05;
+        document.addEventListener("keydown", function(event) {
+          const key = event.keyCode;
+          if (key === 13 && levelDeterminer === "thirteen") {
+            levelDeterminer = "fourteen";
+            pushEnemies(levelDeterminer);
+            animateInitFouteen = setInterval(
+              () => animate(starColor, levelDeterminer),
+              30
+            );
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
+          }
+        });
+      }
+      // level fifteen initialisation -----------------------------------------------------------------------------------------
+      if (level === "fouteen") {
+        clearInterval(animateInitFouteen);
+        speed -= 0.1;
+        document.addEventListener("keydown", function(event) {
+          const key = event.keyCode;
+          if (key === 13 && levelDeterminer === "fouteen") {
+            levelDeterminer = "fifteen";
+            pushEnemies(levelDeterminer);
+            animateInitFifteen = setInterval(
+              () => animate(starColor, levelDeterminer),
+              30
+            );
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
+          }
+        });
+      }
+      //-------------------------------Victory!
+      if (level === "fifteen") {
         this.props.updateScore(tempScore);
-        clearInterval(animateInit);
+        clearInterval(animateInitFifteen);
         levelDeterminer = "win";
         document.addEventListener("keydown", event => {
           const key = event.keyCode;
@@ -715,7 +921,6 @@ class SpaceInvaders extends Component {
         <div className="game-status-bar">
           <div>
             <h3 id="score">Score: 0</h3>
-            <h3 id="lives">Ships: 2</h3>
             <h3 id="charge">Charge: 0</h3>
           </div>
           <Link to="/game">

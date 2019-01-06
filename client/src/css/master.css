@@ -1039,6 +1039,47 @@ li {
     #game-page .player-form button {
       font-size: 15px;
       width: 100px; }
+  #game-page .control-screen {
+    height: 99vh;
+    width: 99vw;
+    background: #010922;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: silver ridge 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #game-page .control-screen h1 {
+      text-align: center;
+      color: #ffdf2a;
+      text-shadow: black 2px 2px;
+      margin: 0 15px 30px;
+      font-size: 30px; }
+    #game-page .control-screen ul {
+      max-width: 500px;
+      margin: 0 0 20px; }
+    #game-page .control-screen li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline;
+      margin: 20px;
+      color: #ffedd3;
+      text-shadow: 2px 2px black; }
+    #game-page .control-screen i {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #ff7f2a; }
   @media screen and (min-width: 490px) {
     #game-page .game-screen .game-status-bar {
       margin: 0;
@@ -1055,8 +1096,22 @@ li {
     #game-page .game-screen .game-status-bar {
       padding: 0 15px; }
       #game-page .game-screen .game-status-bar div {
-        margin: 0; }
+        margin: 0 0 20px; }
       #game-page .game-screen .game-status-bar h3 {
         margin: 3px 10px; }
     #game-page #game-canvas {
       margin: auto; } }
+  @media screen and (min-width: 768px) {
+    #game-page .game-screen .game-status-bar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline; }
+      #game-page .game-screen .game-status-bar button {
+        margin: 0 0 0 100px; } }

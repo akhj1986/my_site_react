@@ -198,6 +198,35 @@
     }
   }
 
+  //COntrols page
+  .control-screen {
+    @include game-pages;
+    align-items: center;
+    h1 {
+      text-align: center;
+      color: #ffdf2a;
+      text-shadow: black 2px 2px;
+      margin: 0 15px 30px;
+      font-size: 30px;
+    }
+    ul {
+      max-width: 500px;
+      margin: 0 0 20px;
+    }
+    li {
+      display: flex;
+      align-items: baseline;
+      margin: 20px;
+      color: #ffedd3;
+      text-shadow: 2px 2px black;
+    }
+    i {
+      margin: 0 10px;
+      font-size: 20px;
+      color: #ff7f2a;
+    }
+  }
+
   //Media queries
   @media screen and (min-width: 490px) {
     .game-screen {
@@ -216,7 +245,7 @@
       .game-status-bar {
         padding: 0 15px;
         div {
-          margin: 0;
+          margin: 0 0 20px;
         }
         h3 {
           margin: 3px 10px;
@@ -225,6 +254,18 @@
     }
     #game-canvas {
       margin: auto;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .game-screen {
+      .game-status-bar {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        button {
+          margin: 0 0 0 100px;
+        }
+      }
     }
   }
 }
