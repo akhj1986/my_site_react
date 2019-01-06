@@ -11,11 +11,10 @@ const Paragraph = () => {
       </p>
       <p className="paragraph">
         But please check out my git repository and play a fun little space game
-        I built!
+        I built (not touch screen compatible, sorry)!
       </p>
-      <p className="paragraph">
-        <PortfolioLinks />
-      </p>
+
+      <PortfolioLinks />
     </div>
   );
 };

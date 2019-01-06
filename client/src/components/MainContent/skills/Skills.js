@@ -26,7 +26,7 @@ class Skills extends Component {
             </p>
             <p>
               I am loving the process of mastering modern JavaScript ES6 and
-              delving into the fantastice React framework! I always design using
+              delving into the fantastic React framework! I always design using
               a responsive, mobile-first approach with a focus on ease of
               access. I also have experience working with Bootstrap 4, Adobe
               Photoshop and Adobe Xd.
