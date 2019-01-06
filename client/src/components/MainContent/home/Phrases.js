@@ -14,7 +14,7 @@ class Phrases extends Component {
   }
 
   componentDidMount() {
-    setInterval(this.textRotation, 3000);
+    setInterval(this.textRotation, 4000);
   }
 
   textRotation() {

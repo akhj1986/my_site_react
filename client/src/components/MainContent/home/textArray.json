@@ -9,11 +9,7 @@
       "className": "small-text"
     },
     {
-      "text": "HTML5",
-      "className": "large-text"
-    },
-    {
-      "text": "CSS3",
+      "text": "React Framework",
       "className": "large-text"
     },
     {
@@ -21,9 +17,10 @@
       "className": "large-text"
     },
     {
-      "text": "React",
+      "text": "HTML5, CSS3",
       "className": "large-text"
     },
+
     {
       "text": "...and responsive, mobile-first design...",
       "className": "small-text"
