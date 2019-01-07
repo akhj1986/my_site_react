@@ -172,7 +172,7 @@ class SpaceInvaders extends Component {
       }
       if (level === "eleven") {
         enemiesMap = enemiesTemplate.concat(
-          yPlusSeventy,
+          yPlusForty,
           yPlusTen,
           yTen,
           yForty,
@@ -215,6 +215,7 @@ class SpaceInvaders extends Component {
       }
       if (level === "fourteen") {
         enemiesMap = enemiesTemplate.concat(
+          yPlusSeventy,
           yTen,
           yForty,
           ySeventy,
@@ -479,7 +480,7 @@ class SpaceInvaders extends Component {
     let animateInitEleven = "";
     let animateInitTwelve = "";
     let animateInitThirteen = "";
-    let animateInitFouteen = "";
+    let animateInitFourteen = "";
     let animateInitFifteen = "";
 
     // Movement controls ------------------------------------------------------------------------------------------------
@@ -573,7 +574,7 @@ class SpaceInvaders extends Component {
         clearInterval(animateInitThirteen);
       }
       if (level === "fourteen") {
-        clearInterval(animateInitFouteen);
+        clearInterval(animateInitFourteen);
       }
       if (level === "fifteen") {
         clearInterval(animateInitFifteen);
@@ -613,8 +614,9 @@ class SpaceInvaders extends Component {
         cH * 0.55,
         400
       );
+      ctx.font = "bold 15px Arial, sans serif";
       ctx.fillText(
-        "Then press enter to continue",
+        "Then press ENTER or C to continue (C releases charge at start of next level)",
         cW * 0.5 - 200,
         cH * 0.65,
         400
@@ -629,7 +631,10 @@ class SpaceInvaders extends Component {
         speed += 0.1;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "one") {
+          if (
+            (key === 13 && levelDeterminer === "one") ||
+            (key === 67 && levelDeterminer === "one")
+          ) {
             levelDeterminer = "two";
             pushEnemies(levelDeterminer);
             animateInitTwo = setInterval(
@@ -648,7 +653,10 @@ class SpaceInvaders extends Component {
         speed += 0.1;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "two") {
+          if (
+            (key === 13 && levelDeterminer === "two") ||
+            (key === 67 && levelDeterminer === "two")
+          ) {
             levelDeterminer = "three";
             pushEnemies(levelDeterminer);
             animateInitThree = setInterval(
@@ -666,7 +674,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "three") {
+          if (
+            (key === 13 && levelDeterminer === "three") ||
+            (key === 67 && levelDeterminer === "three")
+          ) {
             levelDeterminer = "four";
             pushEnemies(levelDeterminer);
             animateInitFour = setInterval(
@@ -685,7 +696,10 @@ class SpaceInvaders extends Component {
         speed += 0.08;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "four") {
+          if (
+            (key === 13 && levelDeterminer === "four") ||
+            (key === 67 && levelDeterminer === "four")
+          ) {
             levelDeterminer = "five";
             pushEnemies(levelDeterminer);
             animateInitFive = setInterval(
@@ -705,7 +719,10 @@ class SpaceInvaders extends Component {
         starColor = "rgba(207, 0, 15, 0.75)";
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "five") {
+          if (
+            (key === 13 && levelDeterminer === "five") ||
+            (key === 67 && levelDeterminer === "five")
+          ) {
             levelDeterminer = "six";
             pushEnemies(levelDeterminer);
             animateInitSix = setInterval(
@@ -724,7 +741,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "six") {
+          if (
+            (key === 13 && levelDeterminer === "six") ||
+            (key === 67 && levelDeterminer === "six")
+          ) {
             levelDeterminer = "seven";
             pushEnemies(levelDeterminer);
             animateInitSeven = setInterval(
@@ -743,7 +763,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "seven") {
+          if (
+            (key === 13 && levelDeterminer === "seven") ||
+            (key === 67 && levelDeterminer === "seven")
+          ) {
             levelDeterminer = "eight";
             pushEnemies(levelDeterminer);
             animateInitEight = setInterval(
@@ -762,7 +785,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "eight") {
+          if (
+            (key === 13 && levelDeterminer === "eight") ||
+            (key === 67 && levelDeterminer === "eight")
+          ) {
             levelDeterminer = "nine";
             pushEnemies(levelDeterminer);
             animateInitNine = setInterval(
@@ -781,7 +807,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "nine") {
+          if (
+            (key === 13 && levelDeterminer === "nine") ||
+            (key === 67 && levelDeterminer === "nine")
+          ) {
             levelDeterminer = "ten";
             pushEnemies(levelDeterminer);
             animateInitTen = setInterval(
@@ -799,7 +828,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "ten") {
+          if (
+            (key === 13 && levelDeterminer === "ten") ||
+            (key === 67 && levelDeterminer === "ten")
+          ) {
             levelDeterminer = "eleven";
             pushEnemies(levelDeterminer);
             animateInitEleven = setInterval(
@@ -816,7 +848,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "eleven") {
+          if (
+            (key === 13 && levelDeterminer === "eleven") ||
+            (key === 67 && levelDeterminer === "eleven")
+          ) {
             levelDeterminer = "twelve";
             pushEnemies(levelDeterminer);
             animateInitTwelve = setInterval(
@@ -833,7 +868,10 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "twelve") {
+          if (
+            (key === 13 && levelDeterminer === "twelve") ||
+            (key === 67 && levelDeterminer === "twelve")
+          ) {
             levelDeterminer = "thirteen";
             pushEnemies(levelDeterminer);
             animateInitThirteen = setInterval(
@@ -850,10 +888,13 @@ class SpaceInvaders extends Component {
         speed += 0.05;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "thirteen") {
+          if (
+            (key === 13 && levelDeterminer === "thirteen") ||
+            (key === 67 && levelDeterminer === "thirteen")
+          ) {
             levelDeterminer = "fourteen";
             pushEnemies(levelDeterminer);
-            animateInitFouteen = setInterval(
+            animateInitFourteen = setInterval(
               () => animate(starColor, levelDeterminer),
               30
             );
@@ -862,12 +903,15 @@ class SpaceInvaders extends Component {
         });
       }
       // level fifteen initialisation -----------------------------------------------------------------------------------------
-      if (level === "fouteen") {
-        clearInterval(animateInitFouteen);
+      if (level === "fourteen") {
+        clearInterval(animateInitFourteen);
         speed -= 0.1;
         document.addEventListener("keydown", function(event) {
           const key = event.keyCode;
-          if (key === 13 && levelDeterminer === "fouteen") {
+          if (
+            (key === 13 && levelDeterminer === "fourteen") ||
+            (key === 67 && levelDeterminer === "fourteen")
+          ) {
             levelDeterminer = "fifteen";
             pushEnemies(levelDeterminer);
             animateInitFifteen = setInterval(
@@ -880,19 +924,25 @@ class SpaceInvaders extends Component {
       }
       //-------------------------------Victory!
       if (level === "fifteen") {
+        ctx.clearRect(0, 0, cW, cH);
+        ctx.fillText(
+          "You are victorious! Congratulations!",
+          cW * 0.5 - 200,
+          cH * 0.4,
+          400
+        );
+        ctx.fillText(
+          "Press enter to submit your score!",
+          cW * 0.5 - 200,
+          cH * 0.55,
+          400
+        );
         this.props.updateScore(tempScore);
         clearInterval(animateInitFifteen);
         levelDeterminer = "win";
         document.addEventListener("keydown", event => {
           const key = event.keyCode;
           if (key === 13 && levelDeterminer === "win") {
-            ctx.clearRect(0, 0, cW, cH);
-            ctx.fillText(
-              "You are victorious! Congratulations!",
-              cW * 0.5 - 200,
-              cH * 0.4,
-              400
-            );
             setTimeout(
               this.setState({
                 endGame: true

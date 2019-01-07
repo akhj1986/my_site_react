@@ -198,7 +198,8 @@ table {
     justify-content: center;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
-    flex: 0 0 auto; }
+    flex: 0 0 auto;
+    max-width: 1170px; }
   .section.head .heading {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -286,8 +287,10 @@ table {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 40px;
+    max-width: 1170px;
     height: 40px;
-    padding: 3px 35px 0;
+    margin: 0 35px;
+    padding: 3px 0 0;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
@@ -614,7 +617,8 @@ li {
   .section.head .title {
     padding: 0 80px 0 74px; }
   #navigation {
-    padding: 3px 75px; }
+    padding: 3px 77px 0;
+    margin: auto; }
     #navigation li {
       font-size: 16px; }
   .container .paragraph {
@@ -813,31 +817,62 @@ li {
       #contact-page .contacts span {
         margin: 0 0 30px;
         font-size: 15px; }
-  #portfolio .paragraph {
-    max-width: 800px; }
   #portfolio .repository-link {
     margin: 0 0 0 80px; } }
 
 @media screen and (min-width: 1080px) {
   .section.head .title {
     padding: 0 120px 0 114px; }
+  .section.head .logo-title {
+    margin: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .section.head .logo-title .heading {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto; }
+  .section.head .nav-bar-icons {
+    margin: 0 0 0 400px; }
+  .section.head .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   #navigation {
-    padding: 3px 115px; }
+    padding: 3px 117px 0;
+    margin: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; }
   .container .paragraph {
-    padding: 0 0 0 120px; }
+    padding: 0 120px;
+    max-width: 1170px;
+    margin: auto;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
   .container .row-content {
-    padding: 0 120px; }
+    padding: 0; }
   .container.home-container .phrases {
-    margin: 0 0 0 190px; }
+    margin: 0 auto 10px; }
+    .container.home-container .phrases h1 {
+      margin: 0; }
   .container.home-container .photo-home-nav {
-    margin: 50px 0 0 370px; }
+    margin: 0 auto 0; }
   #contact-page h1 {
     padding: 0 120px;
     margin: 0 0 60px; }
   #contact-page .contacts {
     padding: 0 120px; }
+  #contact-page .container {
+    max-width: 1170px; }
   #skills-page .paragraph {
     padding: 0 120px; }
+  #portfolio .container {
+    margin: auto; }
   #portfolio .paragraph {
     padding: 0 120px; }
   #portfolio h1 {
@@ -845,6 +880,10 @@ li {
     margin: 0 0 60px; }
   #portfolio .repository-link {
     margin: 0 0 0 120px; } }
+
+@media screen and (min-width: 1300px) {
+  .section.head .nav-bar-icons {
+    margin: 0 50px 0 450px; } }
 
 #game-canvas {
   display: block;

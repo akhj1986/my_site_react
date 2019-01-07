@@ -80,7 +80,9 @@
   }
 
   #navigation {
-    padding: 3px 75px;
+    padding: 3px 77px 0;
+    margin: auto;
+
     li {
       font-size: 16px;
     }
@@ -264,9 +266,9 @@
   }
   // Portfolio page specifics
   #portfolio {
-    .paragraph {
-      max-width: 800px;
-    }
+    // .paragraph {
+    //   max-width: 800px;
+    // }
     .repository-link {
       margin: 0 0 0 80px;
     }
@@ -278,27 +280,50 @@
     .title {
       padding: 0 120px 0 114px;
     }
+    .logo-title {
+      margin: auto;
+      flex: 1 0 auto;
+      justify-content: space-between;
+      .heading {
+        flex: 1 0 auto;
+      }
+    }
+
+    .nav-bar-icons {
+      margin: 0 0 0 400px;
+    }
+    .nav-bar {
+      display: flex;
+    }
   }
 
   #navigation {
-    padding: 3px 115px;
+    padding: 3px 117px 0;
+    margin: auto;
+    flex: 1 0 auto;
   }
 
   .container {
     .paragraph {
-      padding: 0 0 0 120px;
+      padding: 0 120px;
+      max-width: 1170px;
+      margin: auto;
+      justify-content: flex-start;
     }
     .row-content {
-      padding: 0 120px;
+      padding: 0;
     }
   }
 
   .container.home-container {
     .phrases {
-      margin: 0 0 0 190px;
+      margin: 0 auto 10px;
+      h1 {
+        margin: 0;
+      }
     }
     .photo-home-nav {
-      margin: 50px 0 0 370px;
+      margin: 0 auto 0;
     }
   }
 
@@ -311,6 +336,9 @@
     .contacts {
       padding: 0 120px;
     }
+    .container {
+      max-width: 1170px;
+    }
   }
 
   // Skills page specifics
@@ -322,6 +350,9 @@
 
   // Portfolio page specifics
   #portfolio {
+    .container {
+      margin: auto;
+    }
     .paragraph {
       padding: 0 120px;
     }
@@ -331,6 +362,14 @@
     }
     .repository-link {
       margin: 0 0 0 120px;
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .section.head {
+    .nav-bar-icons {
+      margin: 0 50px 0 450px;
     }
   }
 }
