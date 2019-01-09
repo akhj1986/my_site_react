@@ -4,7 +4,7 @@ import GameThumbnail from "../../../img/GameThumbnail.jpg";
 
 const PortfolioLinks = () => {
   return (
-    <div className="portfolio-links paragraph">
+    <div className="portfolio-links">
       <div className="game-link">
         <Link to="/game" target="_blank">
           <img src={GameThumbnail} alt="Space Block Attack" />

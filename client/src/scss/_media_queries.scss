@@ -112,13 +112,18 @@
       @include flex-column;
       flex: 1 0 auto;
       justify-content: flex-start;
+      padding: 45px 80px 0;
     }
-    h1 {
-      padding: 0 80px;
-      margin: 0 0 45px;
+    .paragraph-head-contact {
+      margin: 0;
+      padding: 0;
+      h1 {
+        padding: 0;
+      }
     }
     .contacts {
-      padding: 0 80px;
+      margin: 0;
+      padding: 0;
     }
   }
 
@@ -190,13 +195,18 @@
     }
   }
 
+  .section.body-content {
+    padding: 0 80px;
+    justify-content: flex-start;
+  }
+
   .container.home-container {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px 0 0;
     .phrases {
-      margin: 0 0 0 150px;
+      margin: 0 0 50px;
       padding: 0 80px;
       justify-content: flex-end;
       align-self: inherit;
@@ -211,7 +221,7 @@
       }
     }
     .photo-home-nav {
-      margin: 50px 0 0 330px;
+      margin: 0;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -247,17 +257,19 @@
   // Contact page specifics
 
   #contact-page {
-    @include flex-column;
-    flex: 1 0 auto;
     .container {
-      padding: 80px 0 0;
+      padding: 75px 0 0;
+      max-width: 1170px;
+      margin: auto;
+      flex: 1 0 auto;
     }
     h1 {
       margin: 0 0 60px;
     }
     .contacts {
       @include flex-row;
-      padding: 0 80px;
+      padding: 0;
+      max-width: 1100px;
       span {
         margin: 0 0 30px;
         font-size: 15px;
@@ -265,12 +277,37 @@
     }
   }
   // Portfolio page specifics
+
   #portfolio {
-    // .paragraph {
-    //   max-width: 800px;
-    // }
     .repository-link {
       margin: 0 0 0 80px;
+    }
+    .container {
+      max-width: 1170px;
+      margin: auto;
+      h1 {
+        padding: 0;
+      }
+      .paragraph {
+        padding: 0;
+        margin: 0 auto 20px;
+      }
+      .portfolio-links {
+        margin: 30px 0 0;
+      }
+    }
+  }
+
+  //Skills page
+
+  #skills-page {
+    .paragraph {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1170px;
+      margin: auto;
     }
   }
 }
@@ -301,6 +338,14 @@
     padding: 3px 117px 0;
     margin: auto;
     flex: 1 0 auto;
+    li {
+      margin: 0 110px 0 0;
+    }
+  }
+
+  .section.body-content {
+    padding: 0 120px;
+    justify-content: flex-start;
   }
 
   .container {
@@ -309,59 +354,56 @@
       max-width: 1170px;
       margin: auto;
       justify-content: flex-start;
-    }
-    .row-content {
-      padding: 0;
-    }
-  }
 
-  .container.home-container {
-    .phrases {
-      margin: 0 auto 10px;
-      h1 {
-        margin: 0;
+      .container.home-container {
+        .phrases {
+          margin: 0 auto 10px;
+          h1 {
+            margin: 0;
+          }
+        }
+        .photo-home-nav {
+          margin: 0 auto 0;
+        }
       }
-    }
-    .photo-home-nav {
-      margin: 0 auto 0;
-    }
-  }
 
-  // Contact page specifics
-  #contact-page {
-    h1 {
-      padding: 0 120px;
-      margin: 0 0 60px;
-    }
-    .contacts {
-      padding: 0 120px;
-    }
-    .container {
-      max-width: 1170px;
-    }
-  }
+      // Contact page specifics
+      #contact-page {
+        h1 {
+          padding: 0 120px;
+          margin: 0 0 60px;
+        }
+        .contacts {
+          padding: 0 120px;
+        }
+        .container {
+          max-width: 1170px;
+        }
+      }
 
-  // Skills page specifics
-  #skills-page {
-    .paragraph {
-      padding: 0 120px;
-    }
-  }
+      // Skills page specifics
+      #skills-page {
+        .paragraph {
+          padding: 0 120px;
+        }
+      }
 
-  // Portfolio page specifics
-  #portfolio {
-    .container {
-      margin: auto;
-    }
-    .paragraph {
-      padding: 0 120px;
-    }
-    h1 {
-      padding: 0 120px;
-      margin: 0 0 60px;
-    }
-    .repository-link {
-      margin: 0 0 0 120px;
+      // Portfolio page specifics
+      #portfolio {
+        .container {
+          margin: auto;
+        }
+        .paragraph {
+          padding: 0 120px;
+        }
+        h1 {
+          padding: 0 120px;
+          margin: 0 0 60px;
+        }
+        .repository-link {
+          margin: 0 0 0 120px;
+        }
+      }
     }
   }
 }
@@ -370,6 +412,37 @@
   .section.head {
     .nav-bar-icons {
       margin: 0 50px 0 450px;
+    }
+  }
+
+  .container {
+    padding: 60px 0 0;
+  }
+  .container.home-container {
+    .phrases {
+      height: auto;
+      width: auto;
+      padding: 0;
+      h1 {
+        width: 600px;
+        height: 80px;
+      }
+      .large-text {
+        font-size: 70px;
+      }
+      .small-text {
+        font-size: 40px;
+      }
+    }
+    .photo-home-nav {
+      p {
+        font-size: 15px;
+        width: 300px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 }
