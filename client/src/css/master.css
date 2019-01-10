@@ -267,7 +267,8 @@ table {
     margin: 0 0 10px 0; }
   .section.head h2 {
     color: #6e06d6;
-    margin: 0 0 0 66px; }
+    margin: 0 0 0 52px;
+    font-size: 14px; }
 
 #contact-link {
   display: none; }
