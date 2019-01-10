@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const NavLink = props => {
+const NavLinks = props => {
   return (
     <li>
-      <Link
+      <NavLink
+        activeStyle={{
+          fontWeight: "bold",
+          borderBottom: "solid 4px #6e06d6"
+        }}
         className={props.style}
         id={props.id}
         exact={props.exact}
@@ -12,9 +16,9 @@ const NavLink = props => {
         onClick={() => props.handleClick(props.name)}
       >
         {props.text}
-      </Link>
+      </NavLink>
     </li>
   );
 };
 
-export default NavLink;
+export default NavLinks;

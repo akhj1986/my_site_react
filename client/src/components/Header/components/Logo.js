@@ -8,7 +8,7 @@ const Logo = () => {
       <div className="logo-title">
         <img src={logo} className="logo" alt="AH" />
         <div className="heading">
-          <h2>Web Developer</h2>
+          <h2>Front-End Developer</h2>
           <KnownScripts />
         </div>
       </div>

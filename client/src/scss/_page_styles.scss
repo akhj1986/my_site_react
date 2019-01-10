@@ -84,9 +84,17 @@
       height: 30px;
       padding: 0 5px;
       border-bottom: solid 4px transparent;
-      &.current {
-        font-weight: 700;
-        border-bottom: solid 4px $purpleText;
+      &#home-link {
+        width: 48px;
+      }
+      &#portfolio-link {
+        width: 78px;
+      }
+      &#skills-link {
+        width: 49px;
+      }
+      &#contact-link {
+        width: 69px;
       }
     }
 
