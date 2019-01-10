@@ -4,7 +4,7 @@
       "routeName": "home",
       "active": true,
       "path": "/",
-      "exact": "true",
+      "exact": true,
       "text": "Home",
       "id": "home-link"
     },
