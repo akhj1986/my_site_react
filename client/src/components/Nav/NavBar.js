@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavLink from "./NavLink";
-import data from "./data.json";
+import data from "../Header/data.json";
 
 class NavBar extends Component {
   constructor(props) {

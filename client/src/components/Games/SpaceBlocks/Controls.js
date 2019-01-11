@@ -29,7 +29,7 @@ const GameMenu = () => {
           Release Charge: <i>C</i>
         </li>
       </ul>
-      <Link to="/game">
+      <Link to="/spaceblocks">
         <button>Back to menu</button>
       </Link>
     </div>

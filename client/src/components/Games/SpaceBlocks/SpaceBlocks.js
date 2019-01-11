@@ -957,7 +957,7 @@ class SpaceInvaders extends Component {
 
   render() {
     if (this.state.endGame === true) {
-      return <Redirect exact to="/game/input" />;
+      return <Redirect exact to="/spaceblocks/input" />;
     }
     return (
       <div className="game-screen">
@@ -973,7 +973,7 @@ class SpaceInvaders extends Component {
             <h3 id="score">Score: 0</h3>
             <h3 id="charge">Charge: 0</h3>
           </div>
-          <Link to="/game">
+          <Link to="/spaceblocks">
             <button>Quit</button>
           </Link>
         </div>

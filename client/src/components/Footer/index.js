@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLink from "./components/Link";
+import FooterLink from "./Link";
 
 const Footer = () => {
   return (

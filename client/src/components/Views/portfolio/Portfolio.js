@@ -1,5 +1,5 @@
 import React from "react";
-import Paragraph from "./components/Paragraph";
+import Paragraph from "./Paragraph";
 
 const Portfolio = () => {
   return (

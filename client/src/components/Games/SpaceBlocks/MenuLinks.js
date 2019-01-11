@@ -10,13 +10,13 @@ class MenuLinks extends Component {
     return (
       <div className="game-menu-links">
         <div className="game-specific">
-          <Link to="/game/play">
+          <Link to="/spaceblocks/play">
             <button>Start a new game</button>
           </Link>
-          <Link to="/game/scores">
+          <Link to="/spaceblocks/scores">
             <button>High Score Table</button>
           </Link>
-          <Link to="/game/controls">
+          <Link to="/spaceblocks/controls">
             <button>View Controls</button>
           </Link>
         </div>

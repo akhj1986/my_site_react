@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "./Header/";
-import MainContent from "./MainContent/";
+import MainContent from "./Views/";
 import Footer from "./Footer/";
 
 const Wrapper = () => {

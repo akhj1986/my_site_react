@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import smallHeadShot from "../../img/headshot3.jpg";
+import smallHeadShot from "../../../img/headshot3.jpg";
 
 const PhotoNav = () => {
   return (

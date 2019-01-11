@@ -56,7 +56,7 @@ class PlayerInput extends Component {
 
   render() {
     if (this.state.toTable === true) {
-      return <Redirect exact to="/game/scores" />;
+      return <Redirect exact to="/spaceblocks/scores" />;
     }
     return (
       <div className="player-form">

@@ -1,5 +1,5 @@
 import React from "react";
-import smallHeadShot from "../../img/headshot3.jpg";
+import smallHeadShot from "../../../img/headshot3.jpg";
 
 const Photo = () => {
   return (

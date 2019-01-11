@@ -6,8 +6,8 @@ const PortfolioLinks = () => {
   return (
     <div className="portfolio-links">
       <div className="game-link">
-        <Link to="/game" target="_blank">
-          <img src={GameThumbnail} alt="Space Block Attack" />
+        <Link to="/spaceblocks" target="_blank">
+          <img src={GameThumbnail} alt="Space Blocks Attack" />
         </Link>
         <p>Space Blocks Attack!</p>
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import SpaceInvaders from "./SpaceInvaders";
+import SpaceBlocks from "./SpaceBlocks";
 import HighScoreTable from "./HighScoreTable";
 import PlayerInput from "./PlayerInput";
 import GameMenu from "./GameMenu";
@@ -25,7 +25,7 @@ class Game extends Component {
   render() {
     const myGame = () => {
       return (
-        <SpaceInvaders updateScore={this.updatePlayerScore} gameState={false} />
+        <SpaceBlocks updateScore={this.updatePlayerScore} gameState={false} />
       );
     };
     const inputScreen = () => {
@@ -33,11 +33,11 @@ class Game extends Component {
     };
     return (
       <div id="game-page">
-        <Route exact path="/game" component={GameMenu} />
-        <Route path="/game/play" render={myGame} />
-        <Route path="/game/scores" component={HighScoreTable} />
-        <Route path="/game/input" render={inputScreen} />
-        <Route path="/game/controls" render={Controls} />
+        <Route exact path="/spaceblocks" component={GameMenu} />
+        <Route path="/spaceblocks/play" render={myGame} />
+        <Route path="/spaceblocks/scores" component={HighScoreTable} />
+        <Route path="/spaceblocks/input" render={inputScreen} />
+        <Route path="/spaceblocks/controls" render={Controls} />
       </div>
     );
   }
