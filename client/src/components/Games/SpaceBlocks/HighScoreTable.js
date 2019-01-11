@@ -13,11 +13,13 @@ class HighScoreTable extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:5000/api/scores").then(res => {
-      this.setState({
-        scores: res.data
+    axios
+      .get("https://spaceblocksattack.herokuapp.com/api/scores")
+      .then(res => {
+        this.setState({
+          scores: res.data
+        });
       });
-    });
   }
 
   handleClick() {

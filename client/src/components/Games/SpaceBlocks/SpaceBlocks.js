@@ -706,7 +706,7 @@ class SpaceInvaders extends Component {
               () => animate(starColor, levelDeterminer),
               30
             );
-            createEnemies("#091416");
+            createEnemies(colors[Math.floor(Math.random() * colors.length)]);
           }
         });
       }

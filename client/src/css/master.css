@@ -1182,20 +1182,23 @@ li {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: vertical;
+      -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center; }
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; }
     #game-page .player-form input {
       width: 250px;
       padding: 10px;
-      margin: 0 0 15px;
+      margin: 0 15px;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; }
     #game-page .player-form button {
-      font-size: 15px;
+      font-size: 20px;
+      height: 40px;
       width: 100px; }
   #game-page .control-screen {
     height: 99vh;

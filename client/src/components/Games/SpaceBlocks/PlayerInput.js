@@ -35,7 +35,7 @@ class PlayerInput extends Component {
     this.loading();
     event.preventDefault();
     axios
-      .post("http://localhost:5000/api/scores", {
+      .post("https://spaceblocksattack.herokuapp.com/api/scores", {
         name: this.state.playerName,
         score: this.props.score
       })
