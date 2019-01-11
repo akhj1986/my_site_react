@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TableEntry from "./TableEntry";
 import { Link } from "react-router-dom";
+import IsSubmitting from "./IsSubmitting";
 
 const axios = require("axios");
 
@@ -8,8 +9,10 @@ class HighScoreTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scores: []
+      scores: [],
+      isLoading: true
     };
+    this.loaded = this.loaded.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +22,16 @@ class HighScoreTable extends Component {
         this.setState({
           scores: res.data
         });
+      })
+      .then(() => {
+        this.loaded();
       });
+  }
+
+  loaded() {
+    this.setState({
+      isLoading: false
+    });
   }
 
   handleClick() {
@@ -41,6 +53,7 @@ class HighScoreTable extends Component {
             elementClass={classID}
             name={info.name}
             score={info.score}
+            date={info.create_date}
           />
         );
       });
@@ -49,6 +62,7 @@ class HighScoreTable extends Component {
         <h1>Space Blocks Attack!</h1>
         <h2>High Scores</h2>
         <ul>{highScores}</ul>
+        <IsSubmitting submitting={this.state.isLoading} />
         <br />
         <Link to="/spaceblocks">
           <button>Back to menu</button>

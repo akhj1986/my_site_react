@@ -1076,24 +1076,30 @@ li {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0;
-    padding: 10px 0 10px 10px; }
+    padding: 10px 5px; }
   #game-page .even {
     background: #a70b00;
     color: #fffc99; }
   #game-page .odd {
     background: #e5e5e5; }
   #game-page .player-name {
+    width: 220px;
     font-weight: bold;
     font-size: 18px;
-    margin: 0 0 0 35px; }
+    margin: 0; }
   #game-page .player-score {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-item-align: end;
     align-self: flex-end;
-    margin: 0 35px 0 0;
+    margin: 0 5px 0 0;
     font-weight: normal; }
+  #game-page .input-date {
+    font-size: 8px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center; }
   #game-page .game-screen {
     height: 99vh;
     width: 99vw;
@@ -1254,6 +1260,10 @@ li {
         -ms-flex-pack: center;
         justify-content: center; } }
   @media screen and (min-width: 600px) {
+    #game-page .score-table .table-entry .player-score {
+      font-weight: bold; }
+    #game-page .score-table .table-entry .input-date {
+      font-size: 12px; }
     #game-page .game-screen .game-status-bar {
       padding: 0 15px; }
       #game-page .game-screen .game-status-bar div {
