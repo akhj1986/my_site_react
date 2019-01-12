@@ -4,7 +4,12 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://alexhj.com",
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 Score = require("./models/score");
