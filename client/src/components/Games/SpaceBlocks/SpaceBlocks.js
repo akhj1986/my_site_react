@@ -487,7 +487,16 @@ class SpaceInvaders extends Component {
 
     document.addEventListener("keyup", function(event) {
       let keyStop = event.keyCode;
-      if (keyStop !== 32) {
+      if (keyStop === 37 && playerOne.dir === "left") {
+        playerOne.dir = "";
+      }
+      if (keyStop === 38 && playerOne.dir === "up") {
+        playerOne.dir = "";
+      }
+      if (keyStop === 39 && playerOne.dir === "right") {
+        playerOne.dir = "";
+      }
+      if (keyStop === 40 && playerOne.dir === "down") {
         playerOne.dir = "";
       }
       if (keyStop === 32) {
