@@ -5,11 +5,26 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "http://alexhj.com",
-  optionsSuccessStatus: 200
+  origin: function(origin, callback) {
+    if (origin === "http://alexhj.com") {
+      callback(null, true);
+    } else {
+      console.log("ORIGIN ERROR", origin);
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
 };
 
 app.use(cors(corsOptions));
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "http://alexhj.com");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
+
 app.use(bodyParser.json());
 
 Score = require("./models/score");
@@ -20,7 +35,7 @@ mongoose.connect(
 );
 
 app.get("/", (req, res) => {
-  res.send("Hello!");
+  res.send("Trying CORS again!!");
 });
 
 app.get("/api/scores", (req, res) => {
@@ -42,6 +57,6 @@ app.post("/api/scores", (req, res) => {
   });
 });
 
-app.listen(5000);
+const PORT = process.env.PORT || 5000;
 
-console.log("App running on port 5000");
+app.listen(PORT, () => console.log(`App running on port ${PORT}`));

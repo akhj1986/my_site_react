@@ -37,21 +37,29 @@ class PlayerInput extends Component {
     axios
       .post("https://spaceblocksattack.herokuapp.com/api/scores", {
         name: this.state.playerName,
-        score: this.props.score
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .then(err => {
-        if (err) {
-          throw err;
-        }
+        score: this.state.playerScore
       })
       .then(() => {
         this.setState({
           toTable: true
         });
+      })
+      .catch(err => {
+        console.log("err", err);
       });
+    // .then(res => {
+    //   console.log(res);
+    // })
+    // .then(err => {
+    //   if (err) {
+    //     throw err;
+    //   }
+    // })
+    // .then(() => {
+    //   this.setState({
+    //     toTable: true
+    //   });
+    // });
   }
 
   render() {

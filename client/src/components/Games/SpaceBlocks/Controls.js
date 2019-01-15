@@ -23,7 +23,7 @@ const GameMenu = () => {
           Fire: <i>SPACE</i>
         </li>
         <li>
-          Charge: <i>SPACE</i> (Hold for for rapid charge)
+          Charge: <i>SPACE</i> (Hold for rapid charge)
         </li>
         <li>
           Release Charge: <i>C</i>
